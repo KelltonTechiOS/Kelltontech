@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="EventsAndCelebrations" representedClassName="EventsAndCelebrations" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="UserDetails" representedClassName="UserDetails" syncable="YES">
+        <attribute name="appliedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="applyingFor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="emailID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="experience" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="highestQualification" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSubmitted" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="previousCompany" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="EventsAndCelebrations" positionX="-54" positionY="45" width="128" height="105"/>
+        <element name="UserDetails" positionX="-63" positionY="-18" width="128" height="165"/>
+    </elements>
+</model>

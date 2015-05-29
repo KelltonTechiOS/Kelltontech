@@ -1,0 +1,623 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D0487001AD50DF800E42F55 /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0486FF1AD50DF800E42F55 /* EventsViewController.m */; };
+		8D0487031AD50E2400E42F55 /* CelebrationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0487021AD50E2400E42F55 /* CelebrationsViewController.m */; };
+		8D750EC01ADE2D0F00FBFCA3 /* cellbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D750EBF1ADE2D0F00FBFCA3 /* cellbackground.png */; };
+		8D750EC31ADE302400FBFCA3 /* UploadPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D750EC21ADE302400FBFCA3 /* UploadPhotosViewController.m */; };
+		8D750ECD1ADE725400FBFCA3 /* EventsAndCelebrations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D750ECC1ADE725400FBFCA3 /* EventsAndCelebrations.m */; };
+		8D75E2BF1ADCDCBA003281C1 /* CelebrationsImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D75E2BE1ADCDCBA003281C1 /* CelebrationsImageViewController.m */; };
+		8D75E2C21ADCE143003281C1 /* CelebrationsImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D75E2C11ADCE143003281C1 /* CelebrationsImageCollectionViewCell.m */; };
+		8D75E2C71ADCF0AB003281C1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D75E2C61ADCF0AB003281C1 /* LoginViewController.m */; };
+		8D75E2C91ADD268E003281C1 /* event.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D75E2C81ADD268E003281C1 /* event.png */; };
+		8D75E2CB1ADD26F2003281C1 /* celeb.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D75E2CA1ADD26F2003281C1 /* celeb.png */; };
+		8D75E2CD1ADD3680003281C1 /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D75E2CC1ADD3680003281C1 /* logo2.png */; };
+		8D8A85CA1AE11559009D6116 /* OngoingCelebrationsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A85C81AE11559009D6116 /* OngoingCelebrationsTableViewCell.m */; };
+		8D8A85CB1AE11559009D6116 /* OngoingCelebrationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D8A85C91AE11559009D6116 /* OngoingCelebrationsTableViewCell.xib */; };
+		8D8A85CD1AE13670009D6116 /* Ongoing Event 2015.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D8A85CC1AE13670009D6116 /* Ongoing Event 2015.png */; };
+		8D8A85D01AE1408E009D6116 /* JobVacanciesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A85CF1AE1408E009D6116 /* JobVacanciesViewController.m */; };
+		8D8EA5511ADFE20B005BF009 /* UserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8EA5501ADFE20B005BF009 /* UserDetails.m */; };
+		8D9E7FA71ADBA0B3005A2836 /* EventsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E7FA61ADBA0B3005A2836 /* EventsCollectionViewCell.m */; };
+		8D9E7FAB1ADBAC0D005A2836 /* eventwise images in Resources */ = {isa = PBXBuildFile; fileRef = 8D9E7FAA1ADBAC0D005A2836 /* eventwise images */; };
+		8DBC91981AD3E3DD00E72E44 /* pic1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DBC91941AD3E3DD00E72E44 /* pic1.png */; };
+		8DBC91991AD3E3DD00E72E44 /* pic2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DBC91951AD3E3DD00E72E44 /* pic2.png */; };
+		8DBC919A1AD3E3DD00E72E44 /* pic3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DBC91961AD3E3DD00E72E44 /* pic3.png */; };
+		8DBC919B1AD3E3DD00E72E44 /* pic4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DBC91971AD3E3DD00E72E44 /* pic4.png */; };
+		8DBC919E1AD3EA9200E72E44 /* swipeDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DBC919C1AD3EA9200E72E44 /* swipeDown.png */; };
+		8DBC919F1AD3EA9200E72E44 /* swipeUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DBC919D1AD3EA9200E72E44 /* swipeUp.png */; };
+		8DD131901AD3A45D00D5DBE5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1318F1AD3A45D00D5DBE5 /* main.m */; };
+		8DD131931AD3A45D00D5DBE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD131921AD3A45D00D5DBE5 /* AppDelegate.m */; };
+		8DD131961AD3A45D00D5DBE5 /* Kellton_Tech.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8DD131941AD3A45D00D5DBE5 /* Kellton_Tech.xcdatamodeld */; };
+		8DD131991AD3A45D00D5DBE5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD131981AD3A45D00D5DBE5 /* ViewController.m */; };
+		8DD1319C1AD3A45D00D5DBE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DD1319A1AD3A45D00D5DBE5 /* Main.storyboard */; };
+		8DD1319E1AD3A45D00D5DBE5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DD1319D1AD3A45D00D5DBE5 /* Images.xcassets */; };
+		8DD131A11AD3A45D00D5DBE5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD1319F1AD3A45D00D5DBE5 /* LaunchScreen.xib */; };
+		8DD131AD1AD3A45D00D5DBE5 /* Kellton_TechTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD131AC1AD3A45D00D5DBE5 /* Kellton_TechTests.m */; };
+		8DD131B91AD3A55D00D5DBE5 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DD131B81AD3A55D00D5DBE5 /* logo.png */; };
+		8DD131BD1AD3B53500D5DBE5 /* MainViewCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD131BC1AD3B53500D5DBE5 /* MainViewCollectionCell.m */; };
+		8DD131C01AD3C0AC00D5DBE5 /* JobPortalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD131BF1AD3C0AC00D5DBE5 /* JobPortalViewController.m */; };
+		8DD131C41AD3D77100D5DBE5 /* Arrow-down-navmenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DD131C31AD3D77100D5DBE5 /* Arrow-down-navmenu.png */; };
+		8DF16A2A1ADBD928001BAC46 /* YearwiseEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF16A281ADBD928001BAC46 /* YearwiseEventTableViewCell.m */; };
+		8DF16A2B1ADBD928001BAC46 /* YearwiseEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DF16A291ADBD928001BAC46 /* YearwiseEventTableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8DD131A71AD3A45D00D5DBE5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8DD131821AD3A45D00D5DBE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DD131891AD3A45D00D5DBE5;
+			remoteInfo = "Kellton Tech";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8D0486FE1AD50DF800E42F55 /* EventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsViewController.h; sourceTree = "<group>"; };
+		8D0486FF1AD50DF800E42F55 /* EventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsViewController.m; sourceTree = "<group>"; };
+		8D0487011AD50E2400E42F55 /* CelebrationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CelebrationsViewController.h; sourceTree = "<group>"; };
+		8D0487021AD50E2400E42F55 /* CelebrationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CelebrationsViewController.m; sourceTree = "<group>"; };
+		8D750EBF1ADE2D0F00FBFCA3 /* cellbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellbackground.png; sourceTree = "<group>"; };
+		8D750EC11ADE302400FBFCA3 /* UploadPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadPhotosViewController.h; sourceTree = "<group>"; };
+		8D750EC21ADE302400FBFCA3 /* UploadPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadPhotosViewController.m; sourceTree = "<group>"; };
+		8D750EC71ADE380D00FBFCA3 /* Kellton_Tech 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Kellton_Tech 2.xcdatamodel"; sourceTree = "<group>"; };
+		8D750ECB1ADE725400FBFCA3 /* EventsAndCelebrations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsAndCelebrations.h; sourceTree = "<group>"; };
+		8D750ECC1ADE725400FBFCA3 /* EventsAndCelebrations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsAndCelebrations.m; sourceTree = "<group>"; };
+		8D75E2BD1ADCDCBA003281C1 /* CelebrationsImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CelebrationsImageViewController.h; sourceTree = "<group>"; };
+		8D75E2BE1ADCDCBA003281C1 /* CelebrationsImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CelebrationsImageViewController.m; sourceTree = "<group>"; };
+		8D75E2C01ADCE143003281C1 /* CelebrationsImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CelebrationsImageCollectionViewCell.h; sourceTree = "<group>"; };
+		8D75E2C11ADCE143003281C1 /* CelebrationsImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CelebrationsImageCollectionViewCell.m; sourceTree = "<group>"; };
+		8D75E2C51ADCF0AB003281C1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		8D75E2C61ADCF0AB003281C1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		8D75E2C81ADD268E003281C1 /* event.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = event.png; sourceTree = "<group>"; };
+		8D75E2CA1ADD26F2003281C1 /* celeb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = celeb.png; sourceTree = "<group>"; };
+		8D75E2CC1ADD3680003281C1 /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2.png; sourceTree = "<group>"; };
+		8D8A85C71AE11559009D6116 /* OngoingCelebrationsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OngoingCelebrationsTableViewCell.h; sourceTree = "<group>"; };
+		8D8A85C81AE11559009D6116 /* OngoingCelebrationsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OngoingCelebrationsTableViewCell.m; sourceTree = "<group>"; };
+		8D8A85C91AE11559009D6116 /* OngoingCelebrationsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OngoingCelebrationsTableViewCell.xib; sourceTree = "<group>"; };
+		8D8A85CC1AE13670009D6116 /* Ongoing Event 2015.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ongoing Event 2015.png"; sourceTree = "<group>"; };
+		8D8A85CE1AE1408E009D6116 /* JobVacanciesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobVacanciesViewController.h; sourceTree = "<group>"; };
+		8D8A85CF1AE1408E009D6116 /* JobVacanciesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobVacanciesViewController.m; sourceTree = "<group>"; };
+		8D8EA54F1ADFE20B005BF009 /* UserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetails.h; sourceTree = "<group>"; };
+		8D8EA5501ADFE20B005BF009 /* UserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetails.m; sourceTree = "<group>"; };
+		8D9E7FA51ADBA0B3005A2836 /* EventsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsCollectionViewCell.h; sourceTree = "<group>"; };
+		8D9E7FA61ADBA0B3005A2836 /* EventsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsCollectionViewCell.m; sourceTree = "<group>"; };
+		8D9E7FAA1ADBAC0D005A2836 /* eventwise images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "eventwise images"; sourceTree = "<group>"; };
+		8DBC91941AD3E3DD00E72E44 /* pic1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic1.png; sourceTree = "<group>"; };
+		8DBC91951AD3E3DD00E72E44 /* pic2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic2.png; sourceTree = "<group>"; };
+		8DBC91961AD3E3DD00E72E44 /* pic3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic3.png; sourceTree = "<group>"; };
+		8DBC91971AD3E3DD00E72E44 /* pic4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic4.png; sourceTree = "<group>"; };
+		8DBC919C1AD3EA9200E72E44 /* swipeDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipeDown.png; sourceTree = "<group>"; };
+		8DBC919D1AD3EA9200E72E44 /* swipeUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipeUp.png; sourceTree = "<group>"; };
+		8DD1318A1AD3A45D00D5DBE5 /* Kellton Tech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kellton Tech.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DD1318E1AD3A45D00D5DBE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DD1318F1AD3A45D00D5DBE5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8DD131911AD3A45D00D5DBE5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8DD131921AD3A45D00D5DBE5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8DD131951AD3A45D00D5DBE5 /* Kellton_Tech.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Kellton_Tech.xcdatamodel; sourceTree = "<group>"; };
+		8DD131971AD3A45D00D5DBE5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8DD131981AD3A45D00D5DBE5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8DD1319B1AD3A45D00D5DBE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8DD1319D1AD3A45D00D5DBE5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8DD131A01AD3A45D00D5DBE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		8DD131A61AD3A45D00D5DBE5 /* Kellton TechTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kellton TechTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DD131AB1AD3A45D00D5DBE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DD131AC1AD3A45D00D5DBE5 /* Kellton_TechTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Kellton_TechTests.m; sourceTree = "<group>"; };
+		8DD131B81AD3A55D00D5DBE5 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		8DD131BB1AD3B53500D5DBE5 /* MainViewCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewCollectionCell.h; sourceTree = "<group>"; };
+		8DD131BC1AD3B53500D5DBE5 /* MainViewCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewCollectionCell.m; sourceTree = "<group>"; };
+		8DD131BE1AD3C0AC00D5DBE5 /* JobPortalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobPortalViewController.h; sourceTree = "<group>"; };
+		8DD131BF1AD3C0AC00D5DBE5 /* JobPortalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobPortalViewController.m; sourceTree = "<group>"; };
+		8DD131C31AD3D77100D5DBE5 /* Arrow-down-navmenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arrow-down-navmenu.png"; sourceTree = "<group>"; };
+		8DF16A271ADBD928001BAC46 /* YearwiseEventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YearwiseEventTableViewCell.h; sourceTree = "<group>"; };
+		8DF16A281ADBD928001BAC46 /* YearwiseEventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YearwiseEventTableViewCell.m; sourceTree = "<group>"; };
+		8DF16A291ADBD928001BAC46 /* YearwiseEventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YearwiseEventTableViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DD131871AD3A45D00D5DBE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DD131A31AD3A45D00D5DBE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8DD131811AD3A45D00D5DBE5 = {
+			isa = PBXGroup;
+			children = (
+				8D8EA54F1ADFE20B005BF009 /* UserDetails.h */,
+				8D8EA5501ADFE20B005BF009 /* UserDetails.m */,
+				8D750ECB1ADE725400FBFCA3 /* EventsAndCelebrations.h */,
+				8D750ECC1ADE725400FBFCA3 /* EventsAndCelebrations.m */,
+				8DD1318C1AD3A45D00D5DBE5 /* Kellton Tech */,
+				8DD131B61AD3A54400D5DBE5 /* Resources */,
+				8DD131A91AD3A45D00D5DBE5 /* Kellton TechTests */,
+				8DD1318B1AD3A45D00D5DBE5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8DD1318B1AD3A45D00D5DBE5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DD1318A1AD3A45D00D5DBE5 /* Kellton Tech.app */,
+				8DD131A61AD3A45D00D5DBE5 /* Kellton TechTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8DD1318C1AD3A45D00D5DBE5 /* Kellton Tech */ = {
+			isa = PBXGroup;
+			children = (
+				8DD131911AD3A45D00D5DBE5 /* AppDelegate.h */,
+				8DD131921AD3A45D00D5DBE5 /* AppDelegate.m */,
+				8DD131971AD3A45D00D5DBE5 /* ViewController.h */,
+				8DD131981AD3A45D00D5DBE5 /* ViewController.m */,
+				8D8A85CE1AE1408E009D6116 /* JobVacanciesViewController.h */,
+				8D8A85CF1AE1408E009D6116 /* JobVacanciesViewController.m */,
+				8DD131BE1AD3C0AC00D5DBE5 /* JobPortalViewController.h */,
+				8DD131BF1AD3C0AC00D5DBE5 /* JobPortalViewController.m */,
+				8D0486FE1AD50DF800E42F55 /* EventsViewController.h */,
+				8D0486FF1AD50DF800E42F55 /* EventsViewController.m */,
+				8D0487011AD50E2400E42F55 /* CelebrationsViewController.h */,
+				8D0487021AD50E2400E42F55 /* CelebrationsViewController.m */,
+				8D75E2BD1ADCDCBA003281C1 /* CelebrationsImageViewController.h */,
+				8D75E2BE1ADCDCBA003281C1 /* CelebrationsImageViewController.m */,
+				8D750EC11ADE302400FBFCA3 /* UploadPhotosViewController.h */,
+				8D750EC21ADE302400FBFCA3 /* UploadPhotosViewController.m */,
+				8D75E2C51ADCF0AB003281C1 /* LoginViewController.h */,
+				8D75E2C61ADCF0AB003281C1 /* LoginViewController.m */,
+				8DD1319A1AD3A45D00D5DBE5 /* Main.storyboard */,
+				8DD1319D1AD3A45D00D5DBE5 /* Images.xcassets */,
+				8DD1319F1AD3A45D00D5DBE5 /* LaunchScreen.xib */,
+				8DD131941AD3A45D00D5DBE5 /* Kellton_Tech.xcdatamodeld */,
+				8DD131BA1AD3B4F300D5DBE5 /* CollectionViewCells */,
+				8DD1318D1AD3A45D00D5DBE5 /* Supporting Files */,
+			);
+			path = "Kellton Tech";
+			sourceTree = "<group>";
+		};
+		8DD1318D1AD3A45D00D5DBE5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8D75E2C81ADD268E003281C1 /* event.png */,
+				8D75E2CA1ADD26F2003281C1 /* celeb.png */,
+				8D75E2CC1ADD3680003281C1 /* logo2.png */,
+				8DD1318E1AD3A45D00D5DBE5 /* Info.plist */,
+				8DD1318F1AD3A45D00D5DBE5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8DD131A91AD3A45D00D5DBE5 /* Kellton TechTests */ = {
+			isa = PBXGroup;
+			children = (
+				8DD131AC1AD3A45D00D5DBE5 /* Kellton_TechTests.m */,
+				8DD131AA1AD3A45D00D5DBE5 /* Supporting Files */,
+			);
+			path = "Kellton TechTests";
+			sourceTree = "<group>";
+		};
+		8DD131AA1AD3A45D00D5DBE5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8DD131AB1AD3A45D00D5DBE5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8DD131B61AD3A54400D5DBE5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D9E7FAA1ADBAC0D005A2836 /* eventwise images */,
+				8DD131B71AD3A54F00D5DBE5 /* images */,
+			);
+			name = Resources;
+			path = "Kellton Tech";
+			sourceTree = "<group>";
+		};
+		8DD131B71AD3A54F00D5DBE5 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				8DBC919C1AD3EA9200E72E44 /* swipeDown.png */,
+				8DBC919D1AD3EA9200E72E44 /* swipeUp.png */,
+				8D8A85CC1AE13670009D6116 /* Ongoing Event 2015.png */,
+				8DD131B81AD3A55D00D5DBE5 /* logo.png */,
+				8DD131C31AD3D77100D5DBE5 /* Arrow-down-navmenu.png */,
+				8DBC91941AD3E3DD00E72E44 /* pic1.png */,
+				8DBC91951AD3E3DD00E72E44 /* pic2.png */,
+				8DBC91961AD3E3DD00E72E44 /* pic3.png */,
+				8DBC91971AD3E3DD00E72E44 /* pic4.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		8DD131BA1AD3B4F300D5DBE5 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				8DD131BB1AD3B53500D5DBE5 /* MainViewCollectionCell.h */,
+				8DD131BC1AD3B53500D5DBE5 /* MainViewCollectionCell.m */,
+				8D9E7FA51ADBA0B3005A2836 /* EventsCollectionViewCell.h */,
+				8D9E7FA61ADBA0B3005A2836 /* EventsCollectionViewCell.m */,
+				8D75E2C01ADCE143003281C1 /* CelebrationsImageCollectionViewCell.h */,
+				8D75E2C11ADCE143003281C1 /* CelebrationsImageCollectionViewCell.m */,
+				8DF16A271ADBD928001BAC46 /* YearwiseEventTableViewCell.h */,
+				8DF16A281ADBD928001BAC46 /* YearwiseEventTableViewCell.m */,
+				8DF16A291ADBD928001BAC46 /* YearwiseEventTableViewCell.xib */,
+				8D8A85C71AE11559009D6116 /* OngoingCelebrationsTableViewCell.h */,
+				8D8A85C81AE11559009D6116 /* OngoingCelebrationsTableViewCell.m */,
+				8D8A85C91AE11559009D6116 /* OngoingCelebrationsTableViewCell.xib */,
+				8D750EBF1ADE2D0F00FBFCA3 /* cellbackground.png */,
+			);
+			name = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DD131891AD3A45D00D5DBE5 /* Kellton Tech */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DD131B01AD3A45D00D5DBE5 /* Build configuration list for PBXNativeTarget "Kellton Tech" */;
+			buildPhases = (
+				8DD131861AD3A45D00D5DBE5 /* Sources */,
+				8DD131871AD3A45D00D5DBE5 /* Frameworks */,
+				8DD131881AD3A45D00D5DBE5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Kellton Tech";
+			productName = "Kellton Tech";
+			productReference = 8DD1318A1AD3A45D00D5DBE5 /* Kellton Tech.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8DD131A51AD3A45D00D5DBE5 /* Kellton TechTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DD131B31AD3A45D00D5DBE5 /* Build configuration list for PBXNativeTarget "Kellton TechTests" */;
+			buildPhases = (
+				8DD131A21AD3A45D00D5DBE5 /* Sources */,
+				8DD131A31AD3A45D00D5DBE5 /* Frameworks */,
+				8DD131A41AD3A45D00D5DBE5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DD131A81AD3A45D00D5DBE5 /* PBXTargetDependency */,
+			);
+			name = "Kellton TechTests";
+			productName = "Kellton TechTests";
+			productReference = 8DD131A61AD3A45D00D5DBE5 /* Kellton TechTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8DD131821AD3A45D00D5DBE5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Kellton Tech";
+				TargetAttributes = {
+					8DD131891AD3A45D00D5DBE5 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					8DD131A51AD3A45D00D5DBE5 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 8DD131891AD3A45D00D5DBE5;
+					};
+				};
+			};
+			buildConfigurationList = 8DD131851AD3A45D00D5DBE5 /* Build configuration list for PBXProject "Kellton Tech" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8DD131811AD3A45D00D5DBE5;
+			productRefGroup = 8DD1318B1AD3A45D00D5DBE5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DD131891AD3A45D00D5DBE5 /* Kellton Tech */,
+				8DD131A51AD3A45D00D5DBE5 /* Kellton TechTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8DD131881AD3A45D00D5DBE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D8A85CD1AE13670009D6116 /* Ongoing Event 2015.png in Resources */,
+				8D750EC01ADE2D0F00FBFCA3 /* cellbackground.png in Resources */,
+				8D9E7FAB1ADBAC0D005A2836 /* eventwise images in Resources */,
+				8DD131B91AD3A55D00D5DBE5 /* logo.png in Resources */,
+				8DD1319C1AD3A45D00D5DBE5 /* Main.storyboard in Resources */,
+				8DBC919E1AD3EA9200E72E44 /* swipeDown.png in Resources */,
+				8DBC919B1AD3E3DD00E72E44 /* pic4.png in Resources */,
+				8DBC919A1AD3E3DD00E72E44 /* pic3.png in Resources */,
+				8D75E2C91ADD268E003281C1 /* event.png in Resources */,
+				8D8A85CB1AE11559009D6116 /* OngoingCelebrationsTableViewCell.xib in Resources */,
+				8DBC91991AD3E3DD00E72E44 /* pic2.png in Resources */,
+				8DBC91981AD3E3DD00E72E44 /* pic1.png in Resources */,
+				8D75E2CB1ADD26F2003281C1 /* celeb.png in Resources */,
+				8DBC919F1AD3EA9200E72E44 /* swipeUp.png in Resources */,
+				8DD131A11AD3A45D00D5DBE5 /* LaunchScreen.xib in Resources */,
+				8DF16A2B1ADBD928001BAC46 /* YearwiseEventTableViewCell.xib in Resources */,
+				8DD1319E1AD3A45D00D5DBE5 /* Images.xcassets in Resources */,
+				8DD131C41AD3D77100D5DBE5 /* Arrow-down-navmenu.png in Resources */,
+				8D75E2CD1ADD3680003281C1 /* logo2.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DD131A41AD3A45D00D5DBE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DD131861AD3A45D00D5DBE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DD131C01AD3C0AC00D5DBE5 /* JobPortalViewController.m in Sources */,
+				8D75E2C21ADCE143003281C1 /* CelebrationsImageCollectionViewCell.m in Sources */,
+				8D750EC31ADE302400FBFCA3 /* UploadPhotosViewController.m in Sources */,
+				8D8A85CA1AE11559009D6116 /* OngoingCelebrationsTableViewCell.m in Sources */,
+				8D75E2C71ADCF0AB003281C1 /* LoginViewController.m in Sources */,
+				8D750ECD1ADE725400FBFCA3 /* EventsAndCelebrations.m in Sources */,
+				8DF16A2A1ADBD928001BAC46 /* YearwiseEventTableViewCell.m in Sources */,
+				8D0487031AD50E2400E42F55 /* CelebrationsViewController.m in Sources */,
+				8DD131961AD3A45D00D5DBE5 /* Kellton_Tech.xcdatamodeld in Sources */,
+				8DD131931AD3A45D00D5DBE5 /* AppDelegate.m in Sources */,
+				8D0487001AD50DF800E42F55 /* EventsViewController.m in Sources */,
+				8D75E2BF1ADCDCBA003281C1 /* CelebrationsImageViewController.m in Sources */,
+				8D8A85D01AE1408E009D6116 /* JobVacanciesViewController.m in Sources */,
+				8D9E7FA71ADBA0B3005A2836 /* EventsCollectionViewCell.m in Sources */,
+				8DD131991AD3A45D00D5DBE5 /* ViewController.m in Sources */,
+				8D8EA5511ADFE20B005BF009 /* UserDetails.m in Sources */,
+				8DD131BD1AD3B53500D5DBE5 /* MainViewCollectionCell.m in Sources */,
+				8DD131901AD3A45D00D5DBE5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DD131A21AD3A45D00D5DBE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DD131AD1AD3A45D00D5DBE5 /* Kellton_TechTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8DD131A81AD3A45D00D5DBE5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DD131891AD3A45D00D5DBE5 /* Kellton Tech */;
+			targetProxy = 8DD131A71AD3A45D00D5DBE5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8DD1319A1AD3A45D00D5DBE5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8DD1319B1AD3A45D00D5DBE5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8DD1319F1AD3A45D00D5DBE5 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8DD131A01AD3A45D00D5DBE5 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8DD131AE1AD3A45D00D5DBE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8DD131AF1AD3A45D00D5DBE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8DD131B11AD3A45D00D5DBE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				INFOPLIST_FILE = "Kellton Tech/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8DD131B21AD3A45D00D5DBE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				INFOPLIST_FILE = "Kellton Tech/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8DD131B41AD3A45D00D5DBE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Kellton TechTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kellton Tech.app/Kellton Tech";
+			};
+			name = Debug;
+		};
+		8DD131B51AD3A45D00D5DBE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Kellton TechTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kellton Tech.app/Kellton Tech";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8DD131851AD3A45D00D5DBE5 /* Build configuration list for PBXProject "Kellton Tech" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DD131AE1AD3A45D00D5DBE5 /* Debug */,
+				8DD131AF1AD3A45D00D5DBE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8DD131B01AD3A45D00D5DBE5 /* Build configuration list for PBXNativeTarget "Kellton Tech" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DD131B11AD3A45D00D5DBE5 /* Debug */,
+				8DD131B21AD3A45D00D5DBE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8DD131B31AD3A45D00D5DBE5 /* Build configuration list for PBXNativeTarget "Kellton TechTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DD131B41AD3A45D00D5DBE5 /* Debug */,
+				8DD131B51AD3A45D00D5DBE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8DD131941AD3A45D00D5DBE5 /* Kellton_Tech.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8D750EC71ADE380D00FBFCA3 /* Kellton_Tech 2.xcdatamodel */,
+				8DD131951AD3A45D00D5DBE5 /* Kellton_Tech.xcdatamodel */,
+			);
+			currentVersion = 8DD131951AD3A45D00D5DBE5 /* Kellton_Tech.xcdatamodel */;
+			path = Kellton_Tech.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8DD131821AD3A45D00D5DBE5 /* Project object */;
+}
