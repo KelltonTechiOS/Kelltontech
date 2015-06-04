@@ -190,24 +190,39 @@
         
        else if ([self.labelYear.text isEqualToString:@"2015"]) {
             if (indexPath.row == 0) {
-              // self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"upload",@"upload", nil];
+         //     self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"upload", nil];
                 //[self performSegueWithIdentifier:@"ToUpload" sender:self];
+                _celebrationDocumentPathString=[[[DocumentsDirectory stringByAppendingPathComponent:@"images"]stringByAppendingPathComponent:@"Celebrations"]stringByAppendingPathComponent:self.selectCelebration];
+                NSArray *itemsInFolder = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:_celebrationDocumentPathString error:NULL];
                 
+                NSLog(@"%lu",(unsigned long)[itemsInFolder count]);
+                [self.arrayOfSelectImages removeAllObjects];
+                
+                for (id object in itemsInFolder) {
+                    
+                    
+                    [self.arrayOfSelectImages addObject:object];
+                    
+                    
+
            
                 self.buttonUploadShow = YES;
            
+            }
             }
         }
         else
         {
             if (indexPath.row == 0) {
-     //        self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"upload", @"upload", nil];
+     //      self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"upload", nil];
 //                [self performSegueWithIdentifier:@"ToUpload" sender:self];
                 self.buttonUploadShow = YES;
                 _celebrationDocumentPathString=[[[DocumentsDirectory stringByAppendingPathComponent:@"images"]stringByAppendingPathComponent:@"Celebrations"]stringByAppendingPathComponent:self.selectCelebration];
                 NSArray *itemsInFolder = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:_celebrationDocumentPathString error:NULL];
                 
                 NSLog(@"%lu",(unsigned long)[itemsInFolder count]);
+                [self.arrayOfSelectImages removeAllObjects];
+
                 for (id object in itemsInFolder) {
                     
                     
@@ -269,7 +284,8 @@
         }
         else if([self.labelYear.text isEqualToString:@"2015"]) {
             self.arrayOfCelebrations = [NSArray arrayWithObjects:@"Ongoing Celebration 2015", nil];
-            self.arrayOfImages = [NSArray arrayWithObjects:@"upload", nil];
+
+           self.arrayOfImages = [NSArray arrayWithObjects:@"upload", nil];
 
         }
 

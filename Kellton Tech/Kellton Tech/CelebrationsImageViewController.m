@@ -153,7 +153,9 @@
     
 
     if ([_selectedCelebration isEqualToString:@"Ongoing Event 2015"]||[_selectedCelebration isEqualToString:@"Ongoing Celebration 2015"]) {
+        
         [cell.imageViewCell setImage:[UIImage imageWithContentsOfFile:[_OccasionString stringByAppendingPathComponent:[self.arrayOfSelectedImages objectAtIndex:indexPath.row]]]];
+        
 
     }
     
@@ -206,7 +208,9 @@
 
                      }];
     UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(backView.frame.origin.x+(backView.frame.size.width/4), backView.frame.origin.y+(backView.frame.size.height/4), backView.frame.size.width/2 , backView.frame.size.height/2)];
+    
     if ([_selectedCelebration isEqualToString:@"Ongoing Event 2015"]||[_selectedCelebration isEqualToString:@"Ongoing Celebration 2015"]) {
+        
         view.image  =[UIImage imageWithContentsOfFile:[_OccasionString stringByAppendingPathComponent:[self.arrayOfSelectedImages objectAtIndex:indexPath.row]]];
         
     }

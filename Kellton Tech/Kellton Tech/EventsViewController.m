@@ -194,7 +194,7 @@
         }
         else if (self.labelYear.text.integerValue == 2015) {
             self.arrayOfTitles = [NSArray arrayWithObjects:@"Ongoing Event 2015", nil];
-           // self.arrayOfImages = [NSMutableArray arrayWithArray:self.arrayOfTitles];
+            self.arrayOfImages = [NSMutableArray arrayWithArray:self.arrayOfTitles];
             _EventDocumentPathString=[[[DocumentsDirectory stringByAppendingPathComponent:@"images"]stringByAppendingPathComponent:@"Events"]stringByAppendingPathComponent:self.selectEvent];
             NSArray *itemsInFolder = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:_EventDocumentPathString error:NULL];
             
@@ -204,9 +204,10 @@
                 
                 [self.arrayOfSelectImages addObject:object];
                 
-                [self.collectionview reloadData];
             
         }
+            [self.collectionview reloadData];
+
         
         }
         //    NSLog(@"%@",cell.textLabel.text);
@@ -229,7 +230,6 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     EventsCollectionViewCell *cell = (EventsCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    
     if (cell == nil) {
        cell = (EventsCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:@"collectionCell" forIndexPath:indexPath];
     }
@@ -250,10 +250,11 @@
          if (indexPath.row == 0) {
             // [self performSegueWithIdentifier:@"toUpload" sender:self];
 
-         //   self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"upload",@"upload", nil];
+           // self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"upload", nil];
  
                  _EventDocumentPathString=[[[DocumentsDirectory stringByAppendingPathComponent:@"images"]stringByAppendingPathComponent:@"Events"]stringByAppendingPathComponent:self.selectEvent];
                  NSArray *itemsInFolder = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:_EventDocumentPathString error:NULL];
+            [self.arrayOfSelectImages removeAllObjects];
 
                  NSLog(@"%lu",(unsigned long)[itemsInFolder count]);
                  for (id object in itemsInFolder) {
@@ -312,19 +313,21 @@
     }
     else if (self.labelYear.text.integerValue == 2015) {
         if (indexPath.row == 0) {
-           // self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"upload",@"upload", nil];
+       //    self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"upload", nil];
             
             _EventDocumentPathString=[[[DocumentsDirectory stringByAppendingPathComponent:@"images"]stringByAppendingPathComponent:@"Events"]stringByAppendingPathComponent:self.selectEvent];
             NSArray *itemsInFolder = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:_EventDocumentPathString error:NULL];
             
             NSLog(@"%lu",(unsigned long)[itemsInFolder count]);
+            [self.arrayOfSelectImages removeAllObjects];
+
             for (id object in itemsInFolder) {
                 
                 
                 [self.arrayOfSelectImages addObject:object];
                 
             }
-            
+
             self.buttonUploadShow = YES;
             [self performSegueWithIdentifier:@"toImages" sender:self];
 
