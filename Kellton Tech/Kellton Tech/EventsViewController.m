@@ -195,12 +195,20 @@
         else if (self.labelYear.text.integerValue == 2015) {
             self.arrayOfTitles = [NSArray arrayWithObjects:@"Ongoing Event 2015", nil];
            // self.arrayOfImages = [NSMutableArray arrayWithArray:self.arrayOfTitles];
-
-            [self.collectionview reloadData];
+            _EventDocumentPathString=[[[DocumentsDirectory stringByAppendingPathComponent:@"images"]stringByAppendingPathComponent:@"Events"]stringByAppendingPathComponent:self.selectEvent];
+            NSArray *itemsInFolder = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:_EventDocumentPathString error:NULL];
+            
+            NSLog(@"%lu",(unsigned long)[itemsInFolder count]);
+            for (id object in itemsInFolder) {
+                
+                
+                [self.arrayOfSelectImages addObject:object];
+                
+                [self.collectionview reloadData];
             
         }
         
-        
+        }
         //    NSLog(@"%@",cell.textLabel.text);
         [self.tableview setHidden:YES];
         

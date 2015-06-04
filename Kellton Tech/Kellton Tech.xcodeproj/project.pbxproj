@@ -29,8 +29,6 @@
 		8DBC91991AD3E3DD00E72E44 /* pic2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DBC91951AD3E3DD00E72E44 /* pic2.png */; };
 		8DBC919A1AD3E3DD00E72E44 /* pic3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DBC91961AD3E3DD00E72E44 /* pic3.png */; };
 		8DBC919B1AD3E3DD00E72E44 /* pic4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DBC91971AD3E3DD00E72E44 /* pic4.png */; };
-		8DBC919E1AD3EA9200E72E44 /* swipeDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DBC919C1AD3EA9200E72E44 /* swipeDown.png */; };
-		8DBC919F1AD3EA9200E72E44 /* swipeUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DBC919D1AD3EA9200E72E44 /* swipeUp.png */; };
 		8DC6DBBA1B1C743100117B80 /* ComingSoonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC6DBB91B1C743100117B80 /* ComingSoonViewController.m */; };
 		8DD131901AD3A45D00D5DBE5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1318F1AD3A45D00D5DBE5 /* main.m */; };
 		8DD131931AD3A45D00D5DBE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD131921AD3A45D00D5DBE5 /* AppDelegate.m */; };
@@ -93,8 +91,6 @@
 		8DBC91951AD3E3DD00E72E44 /* pic2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic2.png; sourceTree = "<group>"; };
 		8DBC91961AD3E3DD00E72E44 /* pic3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic3.png; sourceTree = "<group>"; };
 		8DBC91971AD3E3DD00E72E44 /* pic4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic4.png; sourceTree = "<group>"; };
-		8DBC919C1AD3EA9200E72E44 /* swipeDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipeDown.png; sourceTree = "<group>"; };
-		8DBC919D1AD3EA9200E72E44 /* swipeUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipeUp.png; sourceTree = "<group>"; };
 		8DC6DBB81B1C743100117B80 /* ComingSoonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComingSoonViewController.h; sourceTree = "<group>"; };
 		8DC6DBB91B1C743100117B80 /* ComingSoonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComingSoonViewController.m; sourceTree = "<group>"; };
 		8DD1318A1AD3A45D00D5DBE5 /* Kellton Tech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kellton Tech.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,8 +234,6 @@
 		8DD131B71AD3A54F00D5DBE5 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				8DBC919C1AD3EA9200E72E44 /* swipeDown.png */,
-				8DBC919D1AD3EA9200E72E44 /* swipeUp.png */,
 				8D8A85CC1AE13670009D6116 /* Ongoing Event 2015.png */,
 				8DD131B81AD3A55D00D5DBE5 /* logo.png */,
 				8DD131C31AD3D77100D5DBE5 /* Arrow-down-navmenu.png */,
@@ -356,7 +350,6 @@
 				8D9E7FAB1ADBAC0D005A2836 /* eventwise images in Resources */,
 				8DD131B91AD3A55D00D5DBE5 /* logo.png in Resources */,
 				8DD1319C1AD3A45D00D5DBE5 /* Main.storyboard in Resources */,
-				8DBC919E1AD3EA9200E72E44 /* swipeDown.png in Resources */,
 				8DBC919B1AD3E3DD00E72E44 /* pic4.png in Resources */,
 				8DBC919A1AD3E3DD00E72E44 /* pic3.png in Resources */,
 				8D75E2C91ADD268E003281C1 /* event.png in Resources */,
@@ -364,7 +357,6 @@
 				8DBC91991AD3E3DD00E72E44 /* pic2.png in Resources */,
 				8DBC91981AD3E3DD00E72E44 /* pic1.png in Resources */,
 				8D75E2CB1ADD26F2003281C1 /* celeb.png in Resources */,
-				8DBC919F1AD3EA9200E72E44 /* swipeUp.png in Resources */,
 				8DD131A11AD3A45D00D5DBE5 /* LaunchScreen.xib in Resources */,
 				8DF16A2B1ADBD928001BAC46 /* YearwiseEventTableViewCell.xib in Resources */,
 				8DD1319E1AD3A45D00D5DBE5 /* Images.xcassets in Resources */,
@@ -464,7 +456,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rajesh Kumar (2VEW8VQ26K)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rajesh Kumar (2VEW8VQ26K)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -484,6 +477,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "688bb0c4-ec03-4455-97cb-1028f991f122";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -505,7 +499,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rajesh Kumar (2VEW8VQ26K)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rajesh Kumar (2VEW8VQ26K)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -518,6 +513,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "688bb0c4-ec03-4455-97cb-1028f991f122";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -528,10 +524,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rajesh Kumar (2VEW8VQ26K)";
 				INFOPLIST_FILE = "Kellton Tech/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "688bb0c4-ec03-4455-97cb-1028f991f122";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -541,10 +539,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rajesh Kumar (2VEW8VQ26K)";
 				INFOPLIST_FILE = "Kellton Tech/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "688bb0c4-ec03-4455-97cb-1028f991f122";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

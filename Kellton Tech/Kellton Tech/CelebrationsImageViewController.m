@@ -33,7 +33,7 @@
     [super viewDidLoad];
     
     NSLog(@"%@",self.arrayOfSelectedImages);
-    [self.titleLabel setText:self.occasionSelectedString];
+    [self.titleLabel setText:self.selectedCelebration];
     [self.buttonUpload.layer setCornerRadius:3.0f];
     [self.buttonUpload.layer setMasksToBounds:NO];
         
