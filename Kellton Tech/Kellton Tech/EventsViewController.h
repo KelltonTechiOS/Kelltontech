@@ -11,7 +11,9 @@
 @interface EventsViewController : UIViewController
 
 @property (nonatomic, strong) NSString *selectEvent;
-@property (nonatomic, strong) NSArray *arrayOfSelectImages;
+@property (nonatomic, strong) NSMutableArray *arrayOfSelectImages;
 @property (nonatomic) BOOL buttonUploadShow;
+@property (nonatomic, strong) NSString *EventDocumentPathString;
+
 
 @end

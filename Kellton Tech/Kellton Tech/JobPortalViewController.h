@@ -12,7 +12,9 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *qualiFication;
 @property (weak, nonatomic) IBOutlet UITextField *emailID;
-@property (weak, nonatomic) IBOutlet UILabel *applyingForText;
+@property (strong, nonatomic) IBOutlet UILabel *applyingForText;
+@property (strong, nonatomic)  NSString *jobLblValue;
+
 @property (weak, nonatomic) IBOutlet UITableView *applyingForTabelView;
 @property (weak, nonatomic) IBOutlet UITextField *previousCompany;
 @property (weak, nonatomic) IBOutlet UITextField *experiance;

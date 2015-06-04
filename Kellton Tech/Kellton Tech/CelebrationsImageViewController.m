@@ -9,11 +9,11 @@
 #import "CelebrationsImageViewController.h"
 #import "CelebrationsImageCollectionViewCell.h"
 #import "UploadPhotosViewController.h"
-
+#define DocumentsDirectory [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 @interface CelebrationsImageViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
-    NSString *str;
     UIView *backView;
+    NSString *str;
 }
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionview;
@@ -33,7 +33,7 @@
     [super viewDidLoad];
     
     NSLog(@"%@",self.arrayOfSelectedImages);
-    [self.titleLabel setText:self.selectedCelebration];
+    [self.titleLabel setText:self.occasionSelectedString];
     [self.buttonUpload.layer setCornerRadius:3.0f];
     [self.buttonUpload.layer setMasksToBounds:NO];
         
@@ -150,8 +150,43 @@
         cell = (CelebrationsImageCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cellID2" forIndexPath:indexPath];
     }
     
+    
+
+    if ([_selectedCelebration isEqualToString:@"Ongoing Event 2015"]||[_selectedCelebration isEqualToString:@"Ongoing Celebration 2015"]) {
+        [cell.imageViewCell setImage:[UIImage imageWithContentsOfFile:[_OccasionString stringByAppendingPathComponent:[self.arrayOfSelectedImages objectAtIndex:indexPath.row]]]];
+
+    }
+    
+    else
+    {
+
     str = [NSString stringWithFormat:@"%@",[self.arrayOfSelectedImages objectAtIndex:indexPath.row]];
-    [cell.imageViewCell setImage:[UIImage imageNamed:str]];
+    
+    
+  [cell.imageViewCell setImage:[UIImage imageNamed:str]];
+    
+    }
+    
+    
+    
+//    NSArray *navigationArray=[self.navigationController viewControllers];
+//    for (id tabbar in navigationArray)
+//    {
+//        if ([tabbar isKindOfClass:[UITabBarController class]])
+//        {
+//            UITabBarController *tabs=tabbar;
+//            if (tabs.tabBar.selectedItem.tag ==0)
+//            {
+// [cell.imageViewCell setImage:[UIImage imageWithContentsOfFile:[_eventString stringByAppendingPathComponent:[self.arrayOfSelectedImages objectAtIndex:indexPath.row]]]];
+//            }
+//            
+//            else
+//            {
+//             [cell.imageViewCell setImage:[UIImage imageWithContentsOfFile:[_celebrationString stringByAppendingPathComponent:[self.arrayOfSelectedImages objectAtIndex:indexPath.row]]]];
+//            }
+//        }
+//    }
+   
     return cell;
 }
 
@@ -170,11 +205,27 @@
                      completion:^(BOOL finished) {
 
                      }];
-    
-    str = [NSString stringWithFormat:@"%@",[self.arrayOfSelectedImages objectAtIndex:indexPath.row]];
-    
     UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(backView.frame.origin.x+(backView.frame.size.width/4), backView.frame.origin.y+(backView.frame.size.height/4), backView.frame.size.width/2 , backView.frame.size.height/2)];
-    view.image = [UIImage imageNamed:str];
+    if ([_selectedCelebration isEqualToString:@"Ongoing Event 2015"]||[_selectedCelebration isEqualToString:@"Ongoing Celebration 2015"]) {
+        view.image  =[UIImage imageWithContentsOfFile:[_OccasionString stringByAppendingPathComponent:[self.arrayOfSelectedImages objectAtIndex:indexPath.row]]];
+        
+    }
+    
+    else
+    {
+        
+        str = [NSString stringWithFormat:@"%@",[self.arrayOfSelectedImages objectAtIndex:indexPath.row]];
+        
+        
+        view.image  =[UIImage imageNamed:str];
+        
+    }
+
+    
+    //_str = [NSString stringWithFormat:@"%@",[self.arrayOfSelectedImages objectAtIndex:indexPath.row]];
+    
+    
+    //view.image = [UIImage imageNamed:_str];
     view.tag = 2222;
 
     [view.layer setBorderWidth:2.0f];
@@ -194,8 +245,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([[segue destinationViewController] isKindOfClass:[UploadPhotosViewController class]]) {
-//        UploadPhotosViewController *uploadVC = (UploadPhotosViewController *)[segue destinationViewController];
-//        uploadVC.selectedCelebration = self.titleLabel.text;
+        
+        UploadPhotosViewController *uploadVC = (UploadPhotosViewController *)[segue destinationViewController];
+    uploadVC.selectedCelebration = self.occasionSelectedString;
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

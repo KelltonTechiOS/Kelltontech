@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface CelebrationsImageViewController : UIViewController
-@property (strong, nonatomic) NSString *selectedCelebration;
 @property (strong, nonatomic) NSArray *arrayOfSelectedImages;
 @property (nonatomic) BOOL buttonShowUpload;
+@property (nonatomic) NSString *OccasionString;
+@property (nonatomic) NSString *celebrationString;
+@property(strong,nonatomic)NSString *occasionSelectedString;
+
+@property (nonatomic) NSString *selectedCelebration;
 @end

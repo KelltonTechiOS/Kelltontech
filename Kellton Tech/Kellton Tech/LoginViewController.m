@@ -9,6 +9,9 @@
 #import "LoginViewController.h"
 
 @interface LoginViewController () <UITextFieldDelegate>
+{
+    UIAlertView *alertView;
+}
 
 @property (weak, nonatomic) IBOutlet UITextField *textFieldUserName;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldPassword;
@@ -23,7 +26,7 @@
     
     [self.buttonSignin.layer setCornerRadius:3.0f];
     [self.buttonSignin.layer setMasksToBounds:NO];
-    
+    alertView.delegate=self;
     // Do any additional setup after loading the view.
 }
 
@@ -40,23 +43,7 @@
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
     
-    if (textField == self.textFieldPassword) {
-        
-        if ([self.textFieldPassword.text isEqualToString:@""]) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Warning!" message:@"Please enter Password" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alertView show];
-        }
-    }
-
-    if (textField == self.textFieldUserName) {
-        
-        if ([self.textFieldUserName.text isEqualToString:@""]) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Warning!" message:@"Please enter User Name" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alertView show];
-        }
-    }
-
-    
+    textField.keyboardType = UIKeyboardTypeDefault;
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -75,30 +62,53 @@
 - (IBAction)signIn:(id)sender {
     
     if ([self.textFieldUserName.text isEqualToString:@""] || [self.textFieldPassword.text isEqualToString:@""]) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Warning!" message:@"Please enter both fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+      alertView = [[UIAlertView alloc] initWithTitle:@"Warning!" message:@"Please enter both fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
         
-    } else {
+    }
+  else  if ([self.textFieldUserName.text isEqualToString:@"admin"] && [self.textFieldPassword.text isEqualToString:@"password"]){
+     alertView = [[UIAlertView alloc] initWithTitle:@"uploaded!" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+      self.textFieldUserName.text=@"";
+        self.textFieldPassword.text = @"";
+        [alertView show];
+       alertView.tag=100;
+      
+        
+   }
+//      else if ([self.textFieldUserName.text isEqualToString:@"dheeraj.raju@kelltontech.com"] && [self.textFieldPassword.text isEqualToString:@"234567"]){
+//
+//       alertView = [[UIAlertView alloc] initWithTitle:@"uploaded!" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//        alertView.tag=100;
+//        self.textFieldUserName.text=@"";
+//
+//        self.textFieldPassword.text = @"";
+//        [alertView show];
+//    
+//    }
+    else {
         
         [[[UIAlertView alloc] initWithTitle:@"Error!" message:@"Please enter valid credentials" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }
+
     
-    if ([self.textFieldUserName.text isEqualToString:@"sateesh.yemireddi@kelltontech.com"] && [self.textFieldPassword.text isEqualToString:@"123456"]){
-        
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"uploaded!" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        self.textFieldPassword.text = @"";
-        [alertView show];
-        
-    }else if ([self.textFieldUserName.text isEqualToString:@"dheeraj.raju@kelltontech.com"] && [self.textFieldPassword.text isEqualToString:@"234567"]){
-        
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"uploaded!" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        self.textFieldPassword.text = @"";
-        [alertView show];
-    
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 100)
+    {
+        if (buttonIndex == 0)
+        {
+            [self performSegueWithIdentifier:@"LoginToMainViewSegue" sender:self];
+            NSLog(@"ok");
+            
+        }
+        else
+        {
+            NSLog(@"cancel");
+        }
     }
     
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

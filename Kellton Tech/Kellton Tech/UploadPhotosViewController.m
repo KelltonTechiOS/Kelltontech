@@ -7,6 +7,8 @@
 //
 
 #import "UploadPhotosViewController.h"
+#import "EventsViewController.h"
+#import "CelebrationsViewController.h"
 
 #define DocumentsDirectory [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 
@@ -36,35 +38,71 @@
     
     [self.buttonAddPhoto.layer setMasksToBounds:NO];
     [self.buttonAddPhoto.layer setCornerRadius:2.0f];
+    
+    [self.tableview setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
+
     // Do any additional setup after loading the view.
 }
 
 
 - (IBAction)upload:(id)sender {
        
-        NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
-        
-        if (([userDefaults objectForKey:@"imagepath"] == nil) || ([[userDefaults objectForKey:@"imagepath"] isEqualToString:@""])|| ([[userDefaults objectForKey:@"imagepath"] isKindOfClass:[NSNull class]]))
-        {
+//        NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+//        
+//        if (([userDefaults objectForKey:@"imagepath"] == nil) || ([[userDefaults objectForKey:@"imagepath"] isEqualToString:@""])|| ([[userDefaults objectForKey:@"imagepath"] isKindOfClass:[NSNull class]]))
+//        {
+//            
+//        }
+//        else
+//        {
+//            NSFileManager *fileManager = [[NSFileManager alloc] init];
+//            [fileManager removeItemAtPath:[DocumentsDirectory stringByAppendingPathComponent:[userDefaults objectForKey:@"imagepath"]] error:NULL];
+//        }
+    
+    
+        NSDate *now = [NSDate date];
+    NSDateFormatter *format=[[NSDateFormatter alloc]init];
+    [format setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+
+        NSString *caldate = [format stringFromDate:now];
+          NSString *imagesPath=[DocumentsDirectory stringByAppendingPathComponent:@"images"];
+    
+    NSFileManager *fileManager=[NSFileManager defaultManager];
+    
+    if (![fileManager fileExistsAtPath:imagesPath]) {
+        [fileManager createDirectoryAtPath:imagesPath withIntermediateDirectories:YES attributes:nil error:nil];
+ 
+    }
+    NSString *selectedCode=self.labelCode.text;
+
+    if (_selectedCelebration)
+    {
+        if (![fileManager fileExistsAtPath:[imagesPath stringByAppendingPathComponent:_selectedCelebration]]) {
             
+            [fileManager createDirectoryAtPath:[imagesPath stringByAppendingPathComponent:_selectedCelebration] withIntermediateDirectories:YES attributes:nil error:nil];
+            if (![fileManager fileExistsAtPath:[[imagesPath stringByAppendingPathComponent:_selectedCelebration] stringByAppendingPathComponent:selectedCode]])
+            {
+                
+                [fileManager createDirectoryAtPath:[[imagesPath stringByAppendingPathComponent:_selectedCelebration] stringByAppendingPathComponent:selectedCode] withIntermediateDirectories:YES attributes:nil error:nil];
+                
+            }
         }
-        else
-        {
-            NSFileManager *fileManager = [[NSFileManager alloc] init];
-            [fileManager removeItemAtPath:[DocumentsDirectory stringByAppendingPathComponent:[userDefaults objectForKey:@"imagepath"]] error:NULL];
-        }
-        NSDate *now = [NSDate dateWithTimeIntervalSinceNow:0];
-        NSString *caldate = [now description];
+    }
+    
+    NSString *filePath= [NSString stringWithFormat:@"%@.png",caldate];
+    
+    _stringForFilePath=[[[imagesPath stringByAppendingPathComponent:_selectedCelebration]stringByAppendingPathComponent:selectedCode] stringByAppendingPathComponent:filePath];
+
+
+    
+    NSData * dataImage = UIImagePNGRepresentation(self.userimageIMGVIEW.image);
+    
+    
+        [dataImage writeToFile: _stringForFilePath atomically:YES];
         
-        NSString *filePath= [NSString stringWithFormat:@"%@.jpg",caldate];
-        
-        NSData * dataImage = UIImagePNGRepresentation(self.userimageIMGVIEW.image);
-        
-        [dataImage writeToFile:[DocumentsDirectory stringByAppendingPathComponent:filePath] atomically:YES];
-        
-        NSString * urlstring = [NSString stringWithFormat:@"%@",filePath];
-        [userDefaults setValue:urlstring forKey:@"imagepath"];
-        
+//        //[userDefaults setValue:urlstring forKey:@"imagepath"];
+    NSLog(@"%@",_stringForFilePath);
+    
 //        [self performSegueWithIdentifier:@"toLogin" sender:self];
 }
 
@@ -123,18 +161,13 @@
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return 3;
-    
-    } else if (section == 1) {
-        return 4;
-    }
-    return 0;
+  
+    return 1;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -147,17 +180,37 @@
     }
     [cell.textLabel setFont:[UIFont fontWithName:@"Helvetica" size:14.0f]];
     
-        if (indexPath.section == 0) {
+    
+    NSArray *navigationArray=[self.navigationController viewControllers];
+    for (id tabbar in navigationArray)
+    {
+        if ([tabbar isKindOfClass:[UITabBarController class]])
+        {
+            UITabBarController *tabs=tabbar;
+            if (tabs.tabBar.selectedItem.tag ==0)
+            {
+                [cell.textLabel setText:@"Ongoing Event 2015"];
+            }
+            else
+            {
+            [cell.textLabel setText:@"Ongoing Celebration 2015"];
+            }
+        }
+    }
+    
+    /*if (indexPath.section == 0) {
             
             switch (indexPath.row) {
                     
-                case 0: [cell.textLabel setText:@"FIFA July 2014"];
+                case 0: [cell.textLabel setText:@"Ongoing Event 2015"];
+                        break;
+                case 1: [cell.textLabel setText:@"FIFA July 2014"];
+                    break;
+                    
+                case 2: [cell.textLabel setText:@"All Hands March 2014"];
                         break;
                     
-                case 1: [cell.textLabel setText:@"All Hands March 2014"];
-                        break;
-                    
-                case 2: [cell.textLabel setText:@"Charity 2013"];
+                case 3: [cell.textLabel setText:@"Charity 2013"];
                         break;
                     
                 default:
@@ -168,25 +221,27 @@
         } else if (indexPath.section == 1) {
             
             switch (indexPath.row) {
-                
-                case 0: [cell.textLabel setText:@"Ongoing Diwali Celebrations 2015"];
+                case 0: [cell.textLabel setText:@"Ongoing Celebration 2015"];
+                    break;
+
+                case 1: [cell.textLabel setText:@"Ongoing Diwali Celebrations 2015"];
                         break;
                     
-                case 1: [cell.textLabel setText:@"Diwali Celebrations 2014"];
+                case 2: [cell.textLabel setText:@"Diwali Celebrations 2014"];
                         break;
                 
-                case 2: [cell.textLabel setText:@"Independence Day Celebrations 2014"];
+                case 3: [cell.textLabel setText:@"Independence Day Celebrations 2014"];
                         break;
                 
-                case 3: [cell.textLabel setText:@"Holi 2014"];
+                case 4: [cell.textLabel setText:@"Holi 2014"];
                         break;
                 
-                case 4: [cell.textLabel setText:@"Diwali 2013"];
+                case 5: [cell.textLabel setText:@"Diwali 2013"];
                         break;
                 default:
                         break;
             }
-        }
+        }*/
         
 
     return cell;
@@ -196,14 +251,7 @@
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return @"Events";
-        
-    } else if (section == 1) {
-        
-        return @"Celebrations";
-    }
-    return @"";
+        return @"";
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -211,6 +259,7 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     [self.labelCode setText:cell.textLabel.text];
     [self.tableview setHidden:YES];
+    
 }
 
 #pragma mark capturing image

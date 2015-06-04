@@ -10,7 +10,9 @@
 #import "EventsCollectionViewCell.h"
 #import "YearwiseEventTableViewCell.h"
 #import "CelebrationsImageViewController.h"
+#import "UploadPhotosViewController.h"
 
+#define DocumentsDirectory [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 @interface EventsViewController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
@@ -29,7 +31,8 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
-    
+    self.tabBarController.title=@"Events";
+
 }
 
 - (IBAction)yearDropdown:(id)sender {
@@ -54,9 +57,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.arrayOfYears = [NSArray arrayWithObjects:@"2014",@"2013", nil];
-    self.arrayOfTitles = [NSArray arrayWithObjects:@"FIFA July 2014",@"All Hands March 2014",@"Charity 2013", nil];
+    self.arrayOfSelectImages=[[NSMutableArray alloc]initWithCapacity:0];
+    self.arrayOfYears = [NSArray arrayWithObjects:@"2015",@"2014",@"2013", nil];
+    self.arrayOfTitles = [NSArray arrayWithObjects:@"Ongoing Event 2015",@"FIFA July 2014",@"All Hands March 2014",@"Charity 2013", nil];
     self.arrayOfImages = [NSMutableArray arrayWithArray:self.arrayOfTitles];
     
     self.stringYear = [NSString string];
@@ -69,7 +72,8 @@
     [self.yearBackView.layer setShadowOffset:CGSizeMake(0, 0)];
     [self.yearBackView.layer setShadowOpacity:0.5f];
     [self.yearBackView.layer setShadowRadius:3.0f];
-    
+    self.tabBarController.title=@"Events";
+
     // Do any additional setup after loading the view.
 }
 
@@ -147,7 +151,7 @@
 {
     if (tableView.tag == 1000) {
         return [self.arrayOfYears count];
-    }
+    }       
     return 0;
 }
 
@@ -188,6 +192,15 @@
             
             [self.collectionview reloadData];
         }
+        else if (self.labelYear.text.integerValue == 2015) {
+            self.arrayOfTitles = [NSArray arrayWithObjects:@"Ongoing Event 2015", nil];
+           // self.arrayOfImages = [NSMutableArray arrayWithArray:self.arrayOfTitles];
+
+            [self.collectionview reloadData];
+            
+        }
+        
+        
         //    NSLog(@"%@",cell.textLabel.text);
         [self.tableview setHidden:YES];
         
@@ -224,30 +237,96 @@
 {
     self.selectEvent = [NSString stringWithFormat:@"%@",[self.arrayOfTitles objectAtIndex:indexPath.row]];
     
-    if (self.labelYear.text.integerValue == 2014 || [self.labelYear.text isEqualToString:@"All"]) {
-        if (indexPath.row == 0) {
-            self.arrayOfSelectImages = [NSArray arrayWithObjects:@"FIFA July 2014",@"FIFA2", nil];
+     if ([self.labelYear.text isEqualToString:@"All"])
+     {
+         if (indexPath.row == 0) {
+            // [self performSegueWithIdentifier:@"toUpload" sender:self];
+
+         //   self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"upload",@"upload", nil];
+ 
+                 _EventDocumentPathString=[[[DocumentsDirectory stringByAppendingPathComponent:@"images"]stringByAppendingPathComponent:@"Events"]stringByAppendingPathComponent:self.selectEvent];
+                 NSArray *itemsInFolder = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:_EventDocumentPathString error:NULL];
+
+                 NSLog(@"%lu",(unsigned long)[itemsInFolder count]);
+                 for (id object in itemsInFolder) {
+                     
+                     
+                     [self.arrayOfSelectImages addObject:object];
+
+             }
             self.buttonUploadShow = YES;
+             [self performSegueWithIdentifier:@"toImages" sender:self];
+
+         }
+         if (indexPath.row == 1) {
+             self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"FIFA July 2014",@"FIFA2", nil];
+             self.buttonUploadShow = NO;
+             [self performSegueWithIdentifier:@"toImages" sender:self];
+
+             
+         } else if (indexPath.row == 2) {
+             self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"All Hands March 2014", @"All Hands2", nil];
+             self.buttonUploadShow = NO;
+             [self performSegueWithIdentifier:@"toImages" sender:self];
+
+             
+         } else if (indexPath.row == 3) {
+             self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"Charity 2013", @"Charity2", nil];
+             self.buttonUploadShow = NO;
+             [self performSegueWithIdentifier:@"toImages" sender:self];
+
+         }
+     }
+   else if (self.labelYear.text.integerValue == 2014 ) {
+        if (indexPath.row == 0) {
+            self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"FIFA July 2014",@"FIFA2", nil];
+            self.buttonUploadShow = NO;
+            [self performSegueWithIdentifier:@"toImages" sender:self];
+
             
         } else if (indexPath.row == 1) {
-            self.arrayOfSelectImages = [NSArray arrayWithObjects:@"All Hands March 2014", @"All Hands2", nil];
-            self.buttonUploadShow = YES;
-            
-        } else if (indexPath.row == 2) {
-            self.arrayOfSelectImages = [NSArray arrayWithObjects:@"Charity 2013", @"Charity2", nil];
+            self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"All Hands March 2014", @"All Hands2", nil];
             self.buttonUploadShow = NO;
+            [self performSegueWithIdentifier:@"toImages" sender:self];
+
         }
     
-    } else if (self.labelYear.text.integerValue == 2013) {
+    }
+    
+    else if (self.labelYear.text.integerValue == 2013) {
         if (indexPath.row == 0) {
-            self.arrayOfSelectImages = [NSArray arrayWithObjects:@"Charity 2013",@"Charity2", nil];
+            self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"Charity 2013",@"Charity2", nil];
             self.buttonUploadShow = NO;
+            [self performSegueWithIdentifier:@"toImages" sender:self];
+
+
+        }
+    }
+    else if (self.labelYear.text.integerValue == 2015) {
+        if (indexPath.row == 0) {
+           // self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"upload",@"upload", nil];
+            
+            _EventDocumentPathString=[[[DocumentsDirectory stringByAppendingPathComponent:@"images"]stringByAppendingPathComponent:@"Events"]stringByAppendingPathComponent:self.selectEvent];
+            NSArray *itemsInFolder = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:_EventDocumentPathString error:NULL];
+            
+            NSLog(@"%lu",(unsigned long)[itemsInFolder count]);
+            for (id object in itemsInFolder) {
+                
+                
+                [self.arrayOfSelectImages addObject:object];
+                
+            }
+            
+            self.buttonUploadShow = YES;
+            [self performSegueWithIdentifier:@"toImages" sender:self];
+
+           // [self performSegueWithIdentifier:@"toUpload" sender:self];
 
         }
     }
     
+    
     [self.tableview setHidden:YES];
-    [self performSegueWithIdentifier:@"toImages" sender:self];
     
 }
 
@@ -259,6 +338,8 @@
             CIVC.selectedCelebration = self.selectEvent;
             CIVC.arrayOfSelectedImages = self.arrayOfSelectImages;
             CIVC.buttonShowUpload = self.buttonUploadShow;
+            CIVC.OccasionString=self.EventDocumentPathString;
+            CIVC.occasionSelectedString=@"Events";
         }
     }
 }

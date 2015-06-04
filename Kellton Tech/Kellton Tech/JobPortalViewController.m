@@ -33,7 +33,7 @@
     
     [self.submitButton.layer setCornerRadius:4.0f];
     [self.submitButton.layer setMasksToBounds:NO];
-    
+    _applyingForText.text=_jobLblValue;
     CGFloat borderWidth = 1.0f;
     
     self.applyingForText.frame = CGRectInset(self.applyingForText.frame, -borderWidth, -borderWidth);

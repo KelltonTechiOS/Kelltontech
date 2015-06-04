@@ -8,11 +8,18 @@
 
 #import "ViewController.h"
 #import "MainViewCollectionCell.h"
+#import "ComingSoonViewController.h"
+
 @interface ViewController ()
 {
     CGRect defaultFrame;
     BOOL onlyOnce;
+    NSMutableArray *arrayOfImages;
+    int imagesCount;
+    
 }
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+
 @property (weak, nonatomic) IBOutlet UIButton *buttonJobPortal;
 @end
 
@@ -41,12 +48,56 @@
     [self.swipeUpBtn.layer setShadowOpacity:0.5f];
     [self.swipeUpBtn.layer setShadowRadius:2.0f];
 
+    
+    arrayOfImages = [NSMutableArray new];
+    for (int i=1; i<=4; i++) {
+        NSString *str = [NSString stringWithFormat:@"pic%d",i];
+        [arrayOfImages addObject:[UIImage imageNamed:str]];
+    }
+    
+    [self animations];
+    
 //    [self.buttonJobPortal.layer setBorderColor:[self colorWithHexString:@"1E90FF"].CGColor];
 //    [self.buttonJobPortal.layer setBorderWidth:1.0f];
     
     // Do any additional setup after loading the view, typically from a nib.
 }
-
+-(void)animations {
+    
+    if (imagesCount < [arrayOfImages count]) {
+        
+        [_imageView setAlpha:0.0f];
+        
+        [UIView animateWithDuration:2.0f
+                              delay:0.0f
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             [_imageView setImage:arrayOfImages[imagesCount]];
+                             [_imageView setAlpha:1.0f];
+                         }
+                         completion:^(BOOL finished) {
+                             [UIView animateWithDuration:2.0f
+                                                   delay:0.0f
+                                                 options:UIViewAnimationOptionCurveEaseOut
+                                              animations:^{
+                                                  [_imageView setImage:arrayOfImages[imagesCount]];
+                                                  [_imageView setAlpha:0.0f];
+                                                  
+                                              }
+                                              completion:^(BOOL finished) {
+                                                  imagesCount++;
+                                                  [self animations];
+                                                  
+                                              }];
+                         }];
+        
+    } else {
+        
+        imagesCount = 0;
+        [self animations];
+    }
+    
+}
 -(UIColor*)colorWithHexString:(NSString*)hex
 {
     NSString *cString = [[hex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
@@ -174,17 +225,60 @@
 #pragma UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 5) {
-        [self performSegueWithIdentifier:@"MainViewToTabView" sender:self];
 
-    } else {
-          [[[UIAlertView alloc] initWithTitle:@"Info" message:@"Coming soon" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+    if (indexPath.row == 0)
+    {
+        id sender = @"Services";
+
+        [self performSegueWithIdentifier:@"ComingSoon" sender:sender];
     }
+    else if (indexPath.row == 1)
+     {
+         id sender = @"InMedia";
+
+     [self performSegueWithIdentifier:@"ComingSoon" sender:sender];
+     }
+   else if (indexPath.row == 2)
+    {
+        id sender = @"@ Kelltontech";
+
+       [self performSegueWithIdentifier:@"ComingSoon" sender:sender];
+        
+    }
+    
+  else  if (indexPath.row == 3)
+    {
+        id sender = @"Meet Kelltonites";
+
+        [self performSegueWithIdentifier:@"ComingSoon" sender:sender];
+        
+    }
+  else  if (indexPath.row == 4)
+    {
+        id sender = @"Newsletter";
+
+        [self performSegueWithIdentifier:@"ComingSoon" sender:sender];
+        
+    }
+    
+  else   if (indexPath.row == 5) {
+        [self performSegueWithIdentifier:@"MainViewToTabView" sender:self];
+    }
+    
+    
+//    } else {
+//          [[[UIAlertView alloc] initWithTitle:@"Info" message:@"Coming soon" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+//    }
     
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if([[segue identifier] isEqualToString:@"ComingSoon"])
+    {
+        ComingSoonViewController *comingSoonVC = [segue destinationViewController];
+        comingSoonVC.headerTitle = sender;
+    }
 
 }
 

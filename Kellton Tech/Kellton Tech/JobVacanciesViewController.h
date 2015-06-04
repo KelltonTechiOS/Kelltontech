@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface JobVacanciesViewController : UIViewController
+- (IBAction)applyButtonPressed:(id)sender;
+@property (nonatomic, strong) NSString *jobsString;
 
 @end

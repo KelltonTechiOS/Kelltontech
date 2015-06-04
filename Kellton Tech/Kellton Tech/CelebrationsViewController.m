@@ -9,7 +9,7 @@
 #import "CelebrationsViewController.h"
 #import "YearwiseEventTableViewCell.h"
 #import "CelebrationsImageViewController.h"
-
+#define DocumentsDirectory [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 @interface CelebrationsViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
@@ -28,15 +28,18 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
+    self.tabBarController.title=@"Celebrations";
+
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.arrayOfSelectImages=[[NSMutableArray alloc]initWithCapacity:0];
+
+    self.arrayOfCelebrations = [NSArray arrayWithObjects:@"Ongoing Celebration 2015",@"Diwali Celebrations 2014",@"Independence Day Celebrations 2014",@"Holi 2014",@"Christmas 2013", nil];
+    self.arrayOfImages = [NSArray arrayWithObjects:@"upload",@"Diwali2",@"Independence Day2",@"Holi2",@"Christmas2", nil];
     
-    self.arrayOfCelebrations = [NSArray arrayWithObjects:@"Diwali Celebrations 2014",@"Independence Day Celebrations 2014",@"Holi 2014",@"Christmas 2013", nil];
-    self.arrayOfImages = [NSArray arrayWithObjects:@"Diwali2",@"Independence Day2",@"Holi2",@"Christmas2", nil];
-    
-    self.arrayOfYears = [NSArray arrayWithObjects:@"2014",@"2013", nil];
+    self.arrayOfYears = [NSArray arrayWithObjects:@"2015",@"2014",@"2013", nil];
     
     [self.tableview setSeparatorColor:[UIColor clearColor]];
 
@@ -50,8 +53,9 @@
     [self.yearBackView.layer setShadowOffset:CGSizeMake(0, 0)];
     [self.yearBackView.layer setShadowOpacity:0.5f];
     [self.yearBackView.layer setShadowRadius:3.0f];
-    
-    self.buttonUploadShow = YES;
+    self.tabBarController.title=@"Celebrations";
+//    self.buttonUploadShow = YES;
+
 //     Do any additional setup after loading the view.
 }
 - (IBAction)tapped:(UITapGestureRecognizer *)sender {
@@ -154,32 +158,107 @@
 
         if ([self.labelYear.text isEqualToString:@"2013"]) {
             if (indexPath.row == 0) {
-                self.arrayOfSelectImages = [NSArray arrayWithObjects:@"Christmas 2013",@"Christmas2", nil];
+                self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"Christmas 2013",@"Christmas2", nil];
+                self.buttonUploadShow = NO;
+
             }
             
-        } else {
-            
+        }
+        else if ([self.labelYear.text isEqualToString:@"2014"]) {
             if (indexPath.row == 0) {
-                self.arrayOfSelectImages = [NSArray arrayWithObjects:@"Diwali Celebrations 2014", @"Diwali2",@"Diwali3",@"Diwali4", nil];
+                self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"Diwali Celebrations 2014", @"Diwali2",@"Diwali3",@"Diwali4", nil];
+                self.buttonUploadShow = NO;
+
                 
             } else if (indexPath.row == 1) {
-                self.arrayOfSelectImages = [NSArray arrayWithObjects:@"Independence Day Celebrations 2014", @"Independence Day2", nil];
+                self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"Independence Day Celebrations 2014", @"Independence Day2", nil];
+                self.buttonUploadShow = NO;
+
                 
             } else if (indexPath.row == 2) {
-                self.arrayOfSelectImages = [NSArray arrayWithObjects:@"Holi 2014", @"Holi2", nil];
+                self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"Holi 2014", @"Holi2", nil];
+                self.buttonUploadShow = NO;
+
                 
             } else if (indexPath.row == 3) {
-                self.arrayOfSelectImages = [NSArray arrayWithObjects:@"Christmas 2013",@"Christmas2", nil];
+                self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"Christmas 2013",@"Christmas2", nil];
+                self.buttonUploadShow = NO;
+
             }
+
         }
         
+       else if ([self.labelYear.text isEqualToString:@"2015"]) {
+            if (indexPath.row == 0) {
+              // self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"upload",@"upload", nil];
+                //[self performSegueWithIdentifier:@"ToUpload" sender:self];
+                
+           
+                self.buttonUploadShow = YES;
+           
+            }
+        }
+        else
+        {
+            if (indexPath.row == 0) {
+     //        self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"upload", @"upload", nil];
+//                [self performSegueWithIdentifier:@"ToUpload" sender:self];
+                self.buttonUploadShow = YES;
+                _celebrationDocumentPathString=[[[DocumentsDirectory stringByAppendingPathComponent:@"images"]stringByAppendingPathComponent:@"Celebrations"]stringByAppendingPathComponent:self.selectCelebration];
+                NSArray *itemsInFolder = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:_celebrationDocumentPathString error:NULL];
+                
+                NSLog(@"%lu",(unsigned long)[itemsInFolder count]);
+                for (id object in itemsInFolder) {
+                    
+                    
+                    [self.arrayOfSelectImages addObject:object];
+                    
+                    
+                    
+                    self.buttonUploadShow = YES;
+                }
+            
+
+
+            }
+            else if (indexPath.row == 1) {
+                self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"Diwali Celebrations 2014", @"Diwali2",@"Diwali3",@"Diwali4", nil];
+                self.buttonUploadShow = NO;
+
+
+                
+            } else if (indexPath.row == 2) {
+                self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"Independence Day Celebrations 2014", @"Independence Day2", nil];
+                self.buttonUploadShow = NO;
+
+
+                
+            } else if (indexPath.row == 3) {
+                self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"Holi 2014", @"Holi2", nil];
+                self.buttonUploadShow = NO;
+
+
+                
+            } else if (indexPath.row == 4) {
+                self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"Christmas 2013",@"Christmas2", nil];
+                self.buttonUploadShow = NO;
+
+
+            }
+            
+        }
         [self performSegueWithIdentifier:@"toCelebImages" sender:self];
+
     }
     
     if (tableView.tag == 2000) {
         [self.labelYear setText:self.arrayOfYears[indexPath.row]];
         
-        if ([self.labelYear.text isEqualToString:@"2014"] || [self.labelYear.text isEqualToString:@"All"]) {
+//        if ([self.labelYear.text isEqualToString:@"2014"] || [self.labelYear.text isEqualToString:@"All"]) {
+        
+            if ([self.labelYear.text isEqualToString:@"2014"])
+                {
+
             self.arrayOfCelebrations = [NSArray arrayWithObjects:@"Diwali Celebrations 2014",@"Independence Day Celebrations 2014",@"Holi 2014", nil];
             self.arrayOfImages = [NSArray arrayWithObjects:@"Diwali2",@"Independence Day2",@"Holi2", nil];
 
@@ -188,6 +267,12 @@
             self.arrayOfCelebrations = [NSArray arrayWithObjects:@"Christmas 2013", nil];
             self.arrayOfImages = [NSArray arrayWithObjects:@"Christmas2", nil];
         }
+        else if([self.labelYear.text isEqualToString:@"2015"]) {
+            self.arrayOfCelebrations = [NSArray arrayWithObjects:@"Ongoing Celebration 2015", nil];
+            self.arrayOfImages = [NSArray arrayWithObjects:@"upload", nil];
+
+        }
+
         [self.tableview reloadData];
         [self.tableViewYear setHidden:YES];
     }
@@ -204,6 +289,8 @@
             CIVC.selectedCelebration = self.selectCelebration;
             CIVC.arrayOfSelectedImages = self.arrayOfSelectImages;
             CIVC.buttonShowUpload = self.buttonUploadShow;
+            CIVC.OccasionString=_celebrationDocumentPathString;
+            CIVC.occasionSelectedString = @"Celebrations";
         }
     }
 }

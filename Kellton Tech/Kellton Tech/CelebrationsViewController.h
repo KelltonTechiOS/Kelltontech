@@ -10,7 +10,9 @@
 
 @interface CelebrationsViewController : UIViewController
 @property (nonatomic, strong) NSString *selectCelebration;
-@property (nonatomic, strong) NSArray *arrayOfSelectImages;
+@property (nonatomic, strong) NSMutableArray *arrayOfSelectImages;
 @property (nonatomic) BOOL buttonUploadShow;
+@property(nonatomic)BOOL imagesPresent;
+@property (nonatomic, strong) NSString *celebrationDocumentPathString;
 
 @end
