@@ -15,4 +15,5 @@
 @property(nonatomic)BOOL imagesPresent;
 @property (nonatomic, strong) NSString *celebrationDocumentPathString;
 
+
 @end

@@ -11,6 +11,5 @@
 @interface UploadPhotosViewController : UIViewController
 @property (strong, nonatomic) NSString *selectedCelebration;
 @property (strong, nonatomic) NSString *stringForFilePath;
-@property(nonatomic,strong)NSString *ControllerString;
-
+@property (strong, nonatomic) NSString *particularOccassion;
 @end

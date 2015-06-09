@@ -16,4 +16,8 @@
 @property(strong,nonatomic)NSString *occasionSelectedString;
 
 @property (nonatomic) NSString *selectedCelebration;
+@property (weak, nonatomic) IBOutlet UILabel *cautionLabel;
+
+-(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue;
+
 @end

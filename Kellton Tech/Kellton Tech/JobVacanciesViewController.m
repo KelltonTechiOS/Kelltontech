@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (strong, nonatomic) NSArray *arrayOfJobs;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewHeight;
+
 @property (strong, nonatomic) NSArray *experienceArray;
 @property (strong, nonatomic) NSArray *positionsArray;
 
@@ -49,7 +51,11 @@
              ,nil];
 
     self.positionsArray=[NSArray arrayWithObjects:@"2",@"6",@"3",@"1", nil];
-    
+    [self.tableview setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
+    _tableViewHeight.constant=44*[self.arrayOfJobs count];
+    [self.tableview needsUpdateConstraints];
+    CGPoint bottomOffset = CGPointMake(0, self.tableview.contentSize.height - self.tableview.bounds.size.height);
+    [self.tableview setContentOffset:bottomOffset animated:YES];
     // Do any additional setup after loading the view.
 }
 
@@ -66,7 +72,21 @@
     }
     cell.textLabel.text = self.arrayOfJobs[indexPath.row];
     
-    
+    if(indexPath.row == 0)
+    {
+        [tableView
+         selectRowAtIndexPath:indexPath
+         animated:TRUE
+         scrollPosition:UITableViewScrollPositionNone
+         ];
+        
+        [[tableView delegate]
+         tableView:tableView
+         didSelectRowAtIndexPath:indexPath
+         ];
+        
+    }
+
     
     return cell;
     

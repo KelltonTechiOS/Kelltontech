@@ -10,4 +10,6 @@
 
 @interface LoginViewController : UIViewController<UIAlertViewDelegate>
 
+@property(nonatomic,strong)NSString *selectedOcassion;
+
 @end

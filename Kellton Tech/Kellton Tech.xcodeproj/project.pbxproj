@@ -20,7 +20,6 @@
 		8D75E2CD1ADD3680003281C1 /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D75E2CC1ADD3680003281C1 /* logo2.png */; };
 		8D8A85CA1AE11559009D6116 /* OngoingCelebrationsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A85C81AE11559009D6116 /* OngoingCelebrationsTableViewCell.m */; };
 		8D8A85CB1AE11559009D6116 /* OngoingCelebrationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D8A85C91AE11559009D6116 /* OngoingCelebrationsTableViewCell.xib */; };
-		8D8A85CD1AE13670009D6116 /* Ongoing Event 2015.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D8A85CC1AE13670009D6116 /* Ongoing Event 2015.png */; };
 		8D8A85D01AE1408E009D6116 /* JobVacanciesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A85CF1AE1408E009D6116 /* JobVacanciesViewController.m */; };
 		8D8EA5511ADFE20B005BF009 /* UserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8EA5501ADFE20B005BF009 /* UserDetails.m */; };
 		8D9E7FA71ADBA0B3005A2836 /* EventsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E7FA61ADBA0B3005A2836 /* EventsCollectionViewCell.m */; };
@@ -79,7 +78,6 @@
 		8D8A85C71AE11559009D6116 /* OngoingCelebrationsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OngoingCelebrationsTableViewCell.h; sourceTree = "<group>"; };
 		8D8A85C81AE11559009D6116 /* OngoingCelebrationsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OngoingCelebrationsTableViewCell.m; sourceTree = "<group>"; };
 		8D8A85C91AE11559009D6116 /* OngoingCelebrationsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OngoingCelebrationsTableViewCell.xib; sourceTree = "<group>"; };
-		8D8A85CC1AE13670009D6116 /* Ongoing Event 2015.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ongoing Event 2015.png"; sourceTree = "<group>"; };
 		8D8A85CE1AE1408E009D6116 /* JobVacanciesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobVacanciesViewController.h; sourceTree = "<group>"; };
 		8D8A85CF1AE1408E009D6116 /* JobVacanciesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobVacanciesViewController.m; sourceTree = "<group>"; };
 		8D8EA54F1ADFE20B005BF009 /* UserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetails.h; sourceTree = "<group>"; };
@@ -234,7 +232,6 @@
 		8DD131B71AD3A54F00D5DBE5 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				8D8A85CC1AE13670009D6116 /* Ongoing Event 2015.png */,
 				8DD131B81AD3A55D00D5DBE5 /* logo.png */,
 				8DD131C31AD3D77100D5DBE5 /* Arrow-down-navmenu.png */,
 				8DBC91941AD3E3DD00E72E44 /* pic1.png */,
@@ -345,7 +342,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D8A85CD1AE13670009D6116 /* Ongoing Event 2015.png in Resources */,
 				8D750EC01ADE2D0F00FBFCA3 /* cellbackground.png in Resources */,
 				8D9E7FAB1ADBAC0D005A2836 /* eventwise images in Resources */,
 				8DD131B91AD3A55D00D5DBE5 /* logo.png in Resources */,
@@ -474,7 +470,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "688bb0c4-ec03-4455-97cb-1028f991f122";
@@ -511,7 +507,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "688bb0c4-ec03-4455-97cb-1028f991f122";
 				SDKROOT = iphoneos;
@@ -526,7 +522,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Rajesh Kumar (2VEW8VQ26K)";
 				INFOPLIST_FILE = "Kellton Tech/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "688bb0c4-ec03-4455-97cb-1028f991f122";
@@ -541,7 +537,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Rajesh Kumar (2VEW8VQ26K)";
 				INFOPLIST_FILE = "Kellton Tech/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "688bb0c4-ec03-4455-97cb-1028f991f122";

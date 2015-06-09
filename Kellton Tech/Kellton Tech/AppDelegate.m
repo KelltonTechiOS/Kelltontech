@@ -8,22 +8,83 @@
 
 #import "AppDelegate.h"
 #import "EventsAndCelebrations.h"
-
+#define DocumentsDirectory [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 @interface AppDelegate ()
-
+{
+    NSArray *eventArray;
+    
+}
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
-//    NSLog(@"%@",[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]);
+  /*  NSFileManager *fileManager=[NSFileManager defaultManager];
     
-//    [self addDataToDatabase];
+    NSString *imagesPath=[DocumentsDirectory stringByAppendingPathComponent:@"hey"];
+
+     [fileManager createDirectoryAtPath:imagesPath withIntermediateDirectories:YES attributes:nil error:nil];
+    NSData* data = UIImagePNGRepresentation([UIImage imageNamed:@"upload.png"]);
+    [data writeToFile:imagesPath atomically:YES];
+    
+    */
+
+    [self addingImages:@"Events"  occassionName:@"FIFA July 2015" occassionNameImages:[NSArray arrayWithObjects:@"FIFA July 2015.png",@"FIFA2.png", nil]];
+    
+    [self addingImages:@"Events"  occassionName:@"Nasscom 2014" occassionNameImages:[NSArray arrayWithObjects:@"Nasscom 2014.png",@"All Hands2.png", nil]];
+    
+    [self addingImages:@"Events"  occassionName:@"Charity 2013" occassionNameImages:[NSArray arrayWithObjects:@"Charity 2013.png", @"Charity2.png", nil]];
+    
+    
+    [self addingImages:@"Celebrations"  occassionName:@"Christmas 2013" occassionNameImages:[NSArray arrayWithObjects:@"Christmas 2013.png",@"Christmas2.png", nil]];
+    
+    
+    [self addingImages:@"Celebrations"  occassionName:@"Diwali Celebrations 2014" occassionNameImages:[NSArray arrayWithObjects:@"Diwali Celebrations 2014.png", @"Diwali2.png", nil]];
+    
+    
+    [self addingImages:@"Celebrations"  occassionName:@"Independence Day Celebrations 2015" occassionNameImages:[NSArray arrayWithObjects:@"Independence Day Celebrations 2015.png",@"Independence Day2.png", nil]];
+    
     return YES;
 }
+
+-(void)addingImages:(NSString*)occasionFolder occassionName:(NSString*)occassionName occassionNameImages:(NSArray *)occassionNameImages
+{
+    NSString *imagesPath=[DocumentsDirectory stringByAppendingPathComponent:@"images"];
+    
+    NSFileManager *fileManager=[NSFileManager defaultManager];
+    NSLog(@"%@-- %@-",occasionFolder,occassionName);
+    if (![fileManager fileExistsAtPath:imagesPath])
+    {
+        [fileManager createDirectoryAtPath:imagesPath withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    
+    
+        
+        if (![fileManager fileExistsAtPath:[imagesPath stringByAppendingPathComponent:occasionFolder]])
+        {
+            
+         
+            [fileManager createDirectoryAtPath:[imagesPath stringByAppendingPathComponent:occasionFolder] withIntermediateDirectories:YES attributes:nil error:nil];
+            
+            }
+
+            if (![fileManager fileExistsAtPath:[[imagesPath stringByAppendingPathComponent:occasionFolder] stringByAppendingPathComponent:occassionName]])
+            {
+                [fileManager createDirectoryAtPath:[[imagesPath stringByAppendingPathComponent:occasionFolder] stringByAppendingPathComponent:occassionName] withIntermediateDirectories:YES attributes:nil error:nil];
+            }
+        for(int j=0;j<[occassionNameImages count];j++)
+        {
+            NSString *filePath=[[imagesPath stringByAppendingPathComponent:occasionFolder]stringByAppendingPathComponent:occassionName] ;
+            
+            
+            NSData * dataImage = UIImagePNGRepresentation([UIImage imageNamed:[occassionNameImages objectAtIndex:j]]);
+            
+            [dataImage writeToFile: [filePath stringByAppendingPathComponent:[occassionNameImages objectAtIndex:j]] atomically:YES];
+            
+        }
+   }
 
 -(void)addDataToDatabase {
     [[NSUserDefaults standardUserDefaults] setObject:@"admin" forKey:@"emailID"];

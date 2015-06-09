@@ -23,7 +23,6 @@
 @end
 
 @implementation JobPortalViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -200,8 +199,7 @@
     cell.textLabel.font = [UIFont fontWithName:@"Arial" size:12.0f];
 
     cell.textLabel.text = [dataArray objectAtIndex:indexPath.row];
-    
-    return cell;
+        return cell;
 
 }
 #pragma UITableViewDelegate

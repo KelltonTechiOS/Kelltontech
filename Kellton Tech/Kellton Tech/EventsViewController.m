@@ -32,6 +32,7 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
     self.tabBarController.title=@"Events";
+    [self.collectionview reloadData];
 
 }
 
@@ -59,7 +60,7 @@
     [super viewDidLoad];
     self.arrayOfSelectImages=[[NSMutableArray alloc]initWithCapacity:0];
     self.arrayOfYears = [NSArray arrayWithObjects:@"2015",@"2014",@"2013", nil];
-    self.arrayOfTitles = [NSArray arrayWithObjects:@"Ongoing Event 2015",@"FIFA July 2014",@"All Hands March 2014",@"Charity 2013", nil];
+    self.arrayOfTitles = [NSArray arrayWithObjects:@"Govt Trust June 2015",@"FIFA July 2015",@"Nasscom 2014",@"Charity 2013", nil];
     self.arrayOfImages = [NSMutableArray arrayWithArray:self.arrayOfTitles];
     
     self.stringYear = [NSString string];
@@ -73,6 +74,7 @@
     [self.yearBackView.layer setShadowOpacity:0.5f];
     [self.yearBackView.layer setShadowRadius:3.0f];
     self.tabBarController.title=@"Events";
+    [self.collectionview reloadData];
 
     // Do any additional setup after loading the view.
 }
@@ -182,35 +184,27 @@
         self.stringYear = cell.textLabel.text;
         
         if (self.labelYear.text.integerValue == 2014) {
-            self.arrayOfTitles = [NSArray arrayWithObjects:@"FIFA July 2014",@"All Hands March 2014", nil];
-            self.arrayOfImages = [NSMutableArray arrayWithArray:self.arrayOfTitles];
-            [self.collectionview reloadData];
-        
+            self.arrayOfTitles = [NSArray arrayWithObjects:@"Nasscom 2014", nil];
+            self.buttonUploadShow = YES;
+
         } else if (self.labelYear.text.integerValue == 2013) {
             self.arrayOfTitles = [NSArray arrayWithObjects: @"Charity 2013",nil];
-            self.arrayOfImages = [NSMutableArray arrayWithArray:self.arrayOfTitles];
-            
-            [self.collectionview reloadData];
+            self.buttonUploadShow = NO;
         }
         else if (self.labelYear.text.integerValue == 2015) {
-            self.arrayOfTitles = [NSArray arrayWithObjects:@"Ongoing Event 2015", nil];
+            self.arrayOfTitles = [NSArray arrayWithObjects:@"Govt Trust June 2015",@"FIFA July 2015", nil];
+            self.buttonUploadShow = YES;
+
+        }
             self.arrayOfImages = [NSMutableArray arrayWithArray:self.arrayOfTitles];
             _EventDocumentPathString=[[[DocumentsDirectory stringByAppendingPathComponent:@"images"]stringByAppendingPathComponent:@"Events"]stringByAppendingPathComponent:self.selectEvent];
             NSArray *itemsInFolder = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:_EventDocumentPathString error:NULL];
             
             NSLog(@"%lu",(unsigned long)[itemsInFolder count]);
             for (id object in itemsInFolder) {
-                
-                
                 [self.arrayOfSelectImages addObject:object];
-                
-            
-        }
-            [self.collectionview reloadData];
-
-        
-        }
-        //    NSLog(@"%@",cell.textLabel.text);
+            }
+        [self.collectionview reloadData];
         [self.tableview setHidden:YES];
         
     }
@@ -245,96 +239,56 @@
 {
     self.selectEvent = [NSString stringWithFormat:@"%@",[self.arrayOfTitles objectAtIndex:indexPath.row]];
     
-     if ([self.labelYear.text isEqualToString:@"All"])
-     {
-         if (indexPath.row == 0) {
-            // [self performSegueWithIdentifier:@"toUpload" sender:self];
-
-           // self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"upload", nil];
- 
-                 _EventDocumentPathString=[[[DocumentsDirectory stringByAppendingPathComponent:@"images"]stringByAppendingPathComponent:@"Events"]stringByAppendingPathComponent:self.selectEvent];
-                 NSArray *itemsInFolder = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:_EventDocumentPathString error:NULL];
-            [self.arrayOfSelectImages removeAllObjects];
-
-                 NSLog(@"%lu",(unsigned long)[itemsInFolder count]);
-                 for (id object in itemsInFolder) {
-                     
-                     
-                     [self.arrayOfSelectImages addObject:object];
-
-             }
-            self.buttonUploadShow = YES;
-             [self performSegueWithIdentifier:@"toImages" sender:self];
-
-         }
-         if (indexPath.row == 1) {
-             self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"FIFA July 2014",@"FIFA2", nil];
-             self.buttonUploadShow = NO;
-             [self performSegueWithIdentifier:@"toImages" sender:self];
-
-             
-         } else if (indexPath.row == 2) {
-             self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"All Hands March 2014", @"All Hands2", nil];
-             self.buttonUploadShow = NO;
-             [self performSegueWithIdentifier:@"toImages" sender:self];
-
-             
-         } else if (indexPath.row == 3) {
-             self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"Charity 2013", @"Charity2", nil];
-             self.buttonUploadShow = NO;
-             [self performSegueWithIdentifier:@"toImages" sender:self];
-
-         }
-     }
-   else if (self.labelYear.text.integerValue == 2014 ) {
+    if ([self.labelYear.text isEqualToString:@"All"])
+    {
         if (indexPath.row == 0) {
-            self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"FIFA July 2014",@"FIFA2", nil];
-            self.buttonUploadShow = NO;
-            [self performSegueWithIdentifier:@"toImages" sender:self];
-
             
-        } else if (indexPath.row == 1) {
-            self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"All Hands March 2014", @"All Hands2", nil];
-            self.buttonUploadShow = NO;
-            [self performSegueWithIdentifier:@"toImages" sender:self];
-
+        self.buttonUploadShow = YES;
+            
         }
+        if (indexPath.row == 1) {
+           
+            self.buttonUploadShow = YES;
+            
+            
+        } else if (indexPath.row == 2) {
+           
+            self.buttonUploadShow = YES;
+            
+            
+        } else if (indexPath.row == 3) {
+            self.buttonUploadShow = NO;
+            
+        }
+    }
+
     
+          
+    if (self.labelYear.text.integerValue == 2014 ) {
+        if (indexPath.row == 0) {
+            self.buttonUploadShow = YES;
+        }
+        else if (indexPath.row == 1) {
+            self.buttonUploadShow = YES;
+            
+        }
+        
     }
     
     else if (self.labelYear.text.integerValue == 2013) {
         if (indexPath.row == 0) {
-            self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"Charity 2013",@"Charity2", nil];
             self.buttonUploadShow = NO;
-            [self performSegueWithIdentifier:@"toImages" sender:self];
-
-
         }
     }
     else if (self.labelYear.text.integerValue == 2015) {
         if (indexPath.row == 0) {
-       //    self.arrayOfSelectImages = [NSMutableArray arrayWithObjects:@"upload", nil];
-            
-            _EventDocumentPathString=[[[DocumentsDirectory stringByAppendingPathComponent:@"images"]stringByAppendingPathComponent:@"Events"]stringByAppendingPathComponent:self.selectEvent];
-            NSArray *itemsInFolder = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:_EventDocumentPathString error:NULL];
-            
-            NSLog(@"%lu",(unsigned long)[itemsInFolder count]);
-            [self.arrayOfSelectImages removeAllObjects];
-
-            for (id object in itemsInFolder) {
-                
-                
-                [self.arrayOfSelectImages addObject:object];
-                
-            }
-
             self.buttonUploadShow = YES;
-            [self performSegueWithIdentifier:@"toImages" sender:self];
-
-           // [self performSegueWithIdentifier:@"toUpload" sender:self];
-
         }
     }
+
+   
+    _EventDocumentPathString=[[[DocumentsDirectory stringByAppendingPathComponent:@"images"]stringByAppendingPathComponent:@"Events"]stringByAppendingPathComponent:self.selectEvent];
+    [self performSegueWithIdentifier:@"toImages" sender:self];
     
     
     [self.tableview setHidden:YES];
@@ -347,7 +301,6 @@
         if ([[segue destinationViewController] isKindOfClass:[CelebrationsImageViewController class]]) {
             CelebrationsImageViewController *CIVC = (CelebrationsImageViewController*)segue.destinationViewController;
             CIVC.selectedCelebration = self.selectEvent;
-            CIVC.arrayOfSelectedImages = self.arrayOfSelectImages;
             CIVC.buttonShowUpload = self.buttonUploadShow;
             CIVC.OccasionString=self.EventDocumentPathString;
             CIVC.occasionSelectedString=@"Events";

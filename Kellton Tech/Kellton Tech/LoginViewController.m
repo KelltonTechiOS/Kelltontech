@@ -67,24 +67,15 @@
         
     }
   else  if ([self.textFieldUserName.text isEqualToString:@"admin"] && [self.textFieldPassword.text isEqualToString:@"password"]){
-     alertView = [[UIAlertView alloc] initWithTitle:@"uploaded!" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+     alertView = [[UIAlertView alloc] initWithTitle:@"Your images are in queue for moderation" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
       self.textFieldUserName.text=@"";
         self.textFieldPassword.text = @"";
         [alertView show];
        alertView.tag=100;
       
-        
+      
    }
-//      else if ([self.textFieldUserName.text isEqualToString:@"dheeraj.raju@kelltontech.com"] && [self.textFieldPassword.text isEqualToString:@"234567"]){
-//
-//       alertView = [[UIAlertView alloc] initWithTitle:@"uploaded!" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//        alertView.tag=100;
-//        self.textFieldUserName.text=@"";
-//
-//        self.textFieldPassword.text = @"";
-//        [alertView show];
-//    
-//    }
+
     else {
         
         [[[UIAlertView alloc] initWithTitle:@"Error!" message:@"Please enter valid credentials" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
@@ -98,8 +89,10 @@
     {
         if (buttonIndex == 0)
         {
-            [self performSegueWithIdentifier:@"LoginToMainViewSegue" sender:self];
-            NSLog(@"ok");
+
+          
+               [self performSegueWithIdentifier:@"exitSegue" sender:self];
+         
             
         }
         else
@@ -108,6 +101,31 @@
         }
     }
     
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if ([identifier isEqualToString:@"exitSegue"]) {
+        // perform your computation to determine whether segue should occur
+        
+        BOOL segueShouldOccur = YES;
+        if (!segueShouldOccur) {
+            UIAlertView *notPermitted = [[UIAlertView alloc]
+                                         initWithTitle:@"Alert"
+                                         message:@"Segue not permitted (better message here)"
+                                         delegate:nil
+                                         cancelButtonTitle:@"OK"
+                                         otherButtonTitles:nil];
+            
+            // shows alert to user
+            [notPermitted show];
+            
+            // prevent segue from occurring
+            return NO;
+        }
+    }
+    
+    // by default perform the segue transition
+    return YES;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
