@@ -806,11 +806,11 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FG0-Mb-ocg">
                                 <rect key="frame" x="15" y="152" width="569" height="298"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="20" id="lnI-Wa-uXv">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="lnI-Wa-uXv">
                                     <size key="itemSize" width="80" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="cellID2" id="5KY-Ot-sOc" customClass="CelebrationsImageCollectionViewCell">
@@ -1149,16 +1149,6 @@
                                                     <outlet property="delegate" destination="cAG-TP-n72" id="Xi2-wj-L2a"/>
                                                 </connections>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbV-2G-lcy">
-                                                <rect key="frame" x="383" y="201" width="160" height="30"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="160" id="34i-C9-n6k"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <textField opaque="NO" clipsSubviews="YES" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8gM-SM-U4W">
                                                 <rect key="frame" x="433" y="161" width="145" height="30"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
@@ -1207,6 +1197,16 @@
                                                     <action selector="submitTouched:" destination="cAG-TP-n72" eventType="touchUpInside" id="iRE-Hk-FVJ"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbV-2G-lcy">
+                                                <rect key="frame" x="383" y="201" width="160" height="30"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="160" id="34i-C9-n6k"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -1353,7 +1353,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fG9-vT-gU9">
-                                <rect key="frame" x="16" y="8" width="568" height="328"/>
+                                <rect key="frame" x="16" y="8" width="550" height="341"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Corporate Headquarters" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11f-vN-FiS">
                                         <rect key="frame" x="8" y="37" width="162" height="18"/>
@@ -1384,19 +1384,6 @@ NJ 08901</string>
                                         <rect key="frame" x="10" y="116" width="161" height="18"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                         <color key="textColor" red="1" green="0.1000732292" blue="0.13416436349999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHr-vg-uJV">
-                                        <rect key="frame" x="10" y="135" width="165" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="165" id="PJt-zu-C7P"/>
-                                            <constraint firstAttribute="height" constant="60" id="XX2-49-0ej"/>
-                                        </constraints>
-                                        <string key="text">19925, Stevens Creek Blvd., Suite 100
-Cupertino
-CA 95014</string>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="12"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D.C. Metro Area" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmC-xQ-7sT">
@@ -1469,12 +1456,27 @@ India</string>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHr-vg-uJV">
+                                        <rect key="frame" x="10" y="135" width="165" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="165" id="PJt-zu-C7P"/>
+                                            <constraint firstAttribute="height" constant="60" id="XX2-49-0ej"/>
+                                        </constraints>
+                                        <string key="text">19925, Stevens Creek Blvd., Suite 100
+Cupertino
+CA 95014</string>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="12"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="IFH-6a-bcJ" secondAttribute="trailing" constant="8" id="0Uq-XL-PLZ"/>
                                     <constraint firstItem="6Bc-ac-UWL" firstAttribute="centerX" secondItem="IFH-6a-bcJ" secondAttribute="centerX" id="1Rj-Wj-3vZ"/>
                                     <constraint firstItem="fSe-Oq-Zii" firstAttribute="leading" secondItem="fG9-vT-gU9" secondAttribute="leading" constant="10" id="60K-Z1-hbX"/>
+                                    <constraint firstItem="IFH-6a-bcJ" firstAttribute="leading" secondItem="1BI-Ra-96R" secondAttribute="trailing" constant="113" id="8IW-16-jhG"/>
+                                    <constraint firstItem="6Bc-ac-UWL" firstAttribute="leading" secondItem="7my-p9-dMd" secondAttribute="trailing" constant="50" id="Cwm-JZ-ydN"/>
                                     <constraint firstItem="JPq-Yp-l4q" firstAttribute="top" secondItem="fSe-Oq-Zii" secondAttribute="bottom" constant="6" id="Dda-dN-kyF"/>
                                     <constraint firstItem="MxK-9O-VkW" firstAttribute="top" secondItem="fG9-vT-gU9" secondAttribute="top" constant="8" id="IC4-yd-PEA"/>
                                     <constraint firstItem="7my-p9-dMd" firstAttribute="top" secondItem="1BI-Ra-96R" secondAttribute="bottom" constant="-7" id="JQR-Z9-j4v"/>
@@ -1494,8 +1496,10 @@ India</string>
                                     <constraint firstAttribute="trailing" secondItem="gbs-Mg-3sV" secondAttribute="trailing" constant="8" id="lPb-jB-gph"/>
                                     <constraint firstItem="RhA-ih-GbN" firstAttribute="top" secondItem="HHr-vg-uJV" secondAttribute="bottom" constant="8" id="piB-Oe-UWQ"/>
                                     <constraint firstItem="HHr-vg-uJV" firstAttribute="leading" secondItem="fG9-vT-gU9" secondAttribute="leading" constant="10" id="qCa-GF-dbG"/>
+                                    <constraint firstAttribute="bottom" secondItem="7my-p9-dMd" secondAttribute="bottom" constant="38" id="tSc-zk-jvo"/>
                                     <constraint firstItem="IFH-6a-bcJ" firstAttribute="top" secondItem="gbs-Mg-3sV" secondAttribute="bottom" constant="117" id="tiQ-Y3-djG"/>
                                     <constraint firstAttribute="trailing" secondItem="cmC-xQ-7sT" secondAttribute="trailing" constant="8" id="tx6-te-a1j"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Bc-ac-UWL" secondAttribute="bottom" constant="29" id="uwZ-3U-Glw"/>
                                     <constraint firstItem="gbs-Mg-3sV" firstAttribute="top" secondItem="cmC-xQ-7sT" secondAttribute="bottom" constant="3" id="z6y-Gk-d3f"/>
                                 </constraints>
                             </scrollView>
@@ -1512,7 +1516,7 @@ India</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UB1-uN-tFp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2172" y="-1333"/>
+            <point key="canvasLocation" x="2171" y="-1396"/>
         </scene>
     </scenes>
     <resources>

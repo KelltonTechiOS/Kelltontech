@@ -40,8 +40,8 @@
     [super viewDidLoad];
     
     self.arrayOfJobs = [NSArray arrayWithObjects:@"QA Lead",@"Technical Lead - Mobile",@"Technical Lead .NET",@"Business Development",nil];
-    self.experienceArray=[NSArray arrayWithObjects:@"5+ years",@"5+ years",@" 5-8 Years",
-                          @"2-4 Years",nil];
+    self.experienceArray=[NSArray arrayWithObjects:@"5+ years",@"5+ years",@"5-8 years",
+                          @"2-4 years",nil];
     
     
     self.descriptionArray=[NSArray arrayWithObjects:@"1.Experience in working with product designers and developers at all stages to promote quality \n2.Clear understanding of different testing concepts \n3.Experience in estimations\n4.Demonstrated past leadership experience in Quality Assurance \n5.Experience in test planning, test case creation, execution and is aware of different test case writing techniques \n6.Experience in tracking and managing defects \n7. Experience with automation tools preferred \n8.Experience in writing and executing sql queries \n9.Good communication skills",

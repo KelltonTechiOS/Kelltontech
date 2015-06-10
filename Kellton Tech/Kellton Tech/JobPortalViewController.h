@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JobPortalViewController : UIViewController<UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface JobPortalViewController : UIViewController<UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *qualiFication;
 @property (weak, nonatomic) IBOutlet UITextField *emailID;

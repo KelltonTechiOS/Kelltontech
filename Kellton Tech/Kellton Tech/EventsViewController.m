@@ -182,10 +182,9 @@
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         [self.labelYear setText:cell.textLabel.text];
         self.stringYear = cell.textLabel.text;
-        
         if (self.labelYear.text.integerValue == 2014) {
             self.arrayOfTitles = [NSArray arrayWithObjects:@"Nasscom 2014", nil];
-            self.buttonUploadShow = YES;
+            self.buttonUploadShow = NO;
 
         } else if (self.labelYear.text.integerValue == 2013) {
             self.arrayOfTitles = [NSArray arrayWithObjects: @"Charity 2013",nil];
@@ -253,7 +252,7 @@
             
         } else if (indexPath.row == 2) {
            
-            self.buttonUploadShow = YES;
+            self.buttonUploadShow = NO;
             
             
         } else if (indexPath.row == 3) {
@@ -266,10 +265,10 @@
           
     if (self.labelYear.text.integerValue == 2014 ) {
         if (indexPath.row == 0) {
-            self.buttonUploadShow = YES;
+            self.buttonUploadShow = NO;
         }
         else if (indexPath.row == 1) {
-            self.buttonUploadShow = YES;
+            self.buttonUploadShow = NO;
             
         }
         

@@ -59,29 +59,24 @@
     return YES;
 }
 
-- (IBAction)signIn:(id)sender {
-    
-    if ([self.textFieldUserName.text isEqualToString:@""] || [self.textFieldPassword.text isEqualToString:@""]) {
+- (IBAction)signIn:(id)sender
+{
+    if ([self.textFieldUserName.text isEqualToString:@""] || [self.textFieldPassword.text isEqualToString:@""])
+    {
       alertView = [[UIAlertView alloc] initWithTitle:@"Warning!" message:@"Please enter both fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
-        
-    }
-  else  if ([self.textFieldUserName.text isEqualToString:@"admin"] && [self.textFieldPassword.text isEqualToString:@"password"]){
-     alertView = [[UIAlertView alloc] initWithTitle:@"Your images are in queue for moderation" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-      self.textFieldUserName.text=@"";
+     }
+  else  if ([self.textFieldUserName.text isEqualToString:@"admin"] && [self.textFieldPassword.text isEqualToString:@"password"])
+  {
+        alertView = [[UIAlertView alloc] initWithTitle:@"Your images are in queue for moderation" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        self.textFieldUserName.text=@"";
         self.textFieldPassword.text = @"";
         [alertView show];
-       alertView.tag=100;
-      
-      
-   }
-
+        alertView.tag=100;
+  }
     else {
-        
         [[[UIAlertView alloc] initWithTitle:@"Error!" message:@"Please enter valid credentials" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }
-
-    
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -89,44 +84,16 @@
     {
         if (buttonIndex == 0)
         {
-
-          
                [self performSegueWithIdentifier:@"exitSegue" sender:self];
-         
-            
         }
         else
         {
             NSLog(@"cancel");
         }
     }
-    
 }
 
-- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    if ([identifier isEqualToString:@"exitSegue"]) {
-        // perform your computation to determine whether segue should occur
-        
-        BOOL segueShouldOccur = YES;
-        if (!segueShouldOccur) {
-            UIAlertView *notPermitted = [[UIAlertView alloc]
-                                         initWithTitle:@"Alert"
-                                         message:@"Segue not permitted (better message here)"
-                                         delegate:nil
-                                         cancelButtonTitle:@"OK"
-                                         otherButtonTitles:nil];
-            
-            // shows alert to user
-            [notPermitted show];
-            
-            // prevent segue from occurring
-            return NO;
-        }
-    }
-    
-    // by default perform the segue transition
-    return YES;
-}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

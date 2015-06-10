@@ -169,7 +169,7 @@
                 
             } else if (indexPath.row == 2) {
                 
-                self.buttonUploadShow = YES;
+                self.buttonUploadShow = NO;
                 
                 
             } else if (indexPath.row == 3) {
@@ -180,11 +180,12 @@
 
         if (self.labelYear.text.integerValue == 2014 ) {
             if (indexPath.row == 0) {
-                self.buttonUploadShow = YES;
+                self.buttonUploadShow = NO;
+ 
             }
             else if (indexPath.row == 1) {
-                self.buttonUploadShow = YES;
-                
+                self.buttonUploadShow = NO;
+  
             }
             
         }
@@ -228,7 +229,7 @@
             self.arrayOfCelebrations = [NSArray arrayWithObjects:@"Diwali Celebrations 2014", nil];
           self.arrayOfImages = [NSArray arrayWithObjects:@"Diwali2", nil];
 
-                    self.buttonUploadShow = YES;
+                    self.buttonUploadShow = NO;
                     
 
         }

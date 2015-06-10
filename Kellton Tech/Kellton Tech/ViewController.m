@@ -369,4 +369,7 @@
     [self refreshUI];
     [self animateSwipeBtn];
 }
+
+-(IBAction)prepareForUnwindMainVC:(UIStoryboardSegue *)segue {
+}
 @end
